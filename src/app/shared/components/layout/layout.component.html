@@ -20,9 +20,16 @@
 				backgroundColor="#fff"
 			></app-divider>
 
-			<app-button-social [outline]="true" icon="pi pi-check"
-				>button</app-button-social
-			>
+			<div class="social-connect-box">
+				<app-button-social
+					*ngFor="let provider of socialProviders"
+					type="button"
+					[outline]="provider.outline"
+					[icon]="provider.icon"
+					(click)="loginWithProvider(provider.name)"
+					>{{ provider.label }}</app-button-social
+				>
+			</div>
 		</div>
 
 		<div class="img-box"></div>

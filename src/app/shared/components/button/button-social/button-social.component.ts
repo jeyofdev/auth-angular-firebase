@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonSocialComponent implements OnInit {
 	@Input() icon!: string;
-	@Input() type!: 'submit' | 'reset' | 'button';
+	@Input({ required: true }) type!: 'submit' | 'reset' | 'button';
 	@Input() outline!: boolean;
 	@Input() size!: 'small' | 'medium' | 'normal' | 'large';
 

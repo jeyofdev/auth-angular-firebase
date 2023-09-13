@@ -1,6 +1,6 @@
 @import '../../../../theme/scss/light/theme/theme';
 
-.layout-container {
+:host ::ng-deep .layout-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,7 +10,7 @@
 	padding: 1rem;
 }
 
-.content-container {
+:host ::ng-deep .content-container {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	background-color: $light;
@@ -28,4 +28,14 @@
 		grid-column: auto / span 8;
 		background-color: var(--primary-800);
 	}
+}
+
+:host ::ng-deep .social-connect-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	gap: 1rem;
+	text-align: center;
+	width: 100%;
 }
