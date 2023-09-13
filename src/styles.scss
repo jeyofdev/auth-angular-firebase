@@ -1,7 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'primeng/resources/themes/lara-light-blue/theme.css';
+@import './theme/scss/light/theme/theme.scss';
 @import 'primeng/resources/primeng.css';
+@import 'primeicons/primeicons.css';
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
 
 body {
+	margin: 0;
 	font-family: var(--font-family);
 }
