@@ -1,0 +1,65 @@
+@import '../../../../../theme/scss/light/theme/theme';
+
+:host ::ng-deep .p-button-rounded {
+	height: auto;
+	width: 35px;
+	height: 35px;
+	color: var(--primary-50);
+
+	.icon {
+		font-size: 1rem;
+		color: var(--primary-800);
+		line-height: 1.2;
+	}
+
+	.button-label {
+		font-size: 0.9rem;
+		color: var(--primary-800);
+	}
+
+	.mr {
+		margin-right: 0.8rem;
+	}
+}
+
+:host ::ng-deep .p-element {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+:host ::ng-deep .p-button:enabled:hover {
+	background-color: transparent;
+}
+
+.btn-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+:host ::ng-deep .size-small {
+	padding: 0.25rem 0.35rem;
+}
+
+:host ::ng-deep .size-medium {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+:host ::ng-deep .size-large {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+:host ::ng-deep .size-normal {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+:host ::ng-deep .size-full {
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
