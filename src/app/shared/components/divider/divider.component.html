@@ -1,0 +1,18 @@
+<p-divider
+	[layout]="layout"
+	[align]="'center'"
+	[ngStyle]="{
+		maxWidth: maxWidth ? maxWidth + 'px' : '100%',
+		margin: margin ? margin : '2.5rem auto'
+	}"
+>
+	<div class="content-box" [ngStyle]="{ backgroundColor }">
+		<ng-container *ngIf="icon">
+			<i [class]="'content-icon ' + icon"></i>
+		</ng-container>
+
+		<ng-container *ngIf="label">
+			<p class="content-label">{{ label }}</p>
+		</ng-container>
+	</div>
+</p-divider>
