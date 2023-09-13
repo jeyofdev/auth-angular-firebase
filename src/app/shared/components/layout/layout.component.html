@@ -1,0 +1,19 @@
+<div class="layout-container">
+	<div class="content-container">
+		<div class="content-box">
+			<div class="content-top">
+				<h1 class="content-title">
+					{{ pageTitle }}
+				</h1>
+
+				<h5 class="content-subtitle">
+					{{ subtitle }}
+				</h5>
+			</div>
+
+			<ng-content select="[templateForm]"></ng-content>
+		</div>
+
+		<div class="img-box"></div>
+	</div>
+</div>
