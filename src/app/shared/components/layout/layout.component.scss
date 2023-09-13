@@ -1,0 +1,31 @@
+@import '../../../../theme/scss/light/theme/theme';
+
+.layout-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary-50);
+	width: 100%;
+	min-height: 100vh;
+	padding: 1rem;
+}
+
+.content-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	background-color: $light;
+	border-radius: 1rem;
+	width: 100%;
+	max-width: 1000px;
+	overflow: hidden;
+
+	.content-box {
+		grid-column: 1 / span 4;
+		padding: 1rem;
+	}
+
+	.img-box {
+		grid-column: auto / span 8;
+		background-color: var(--primary-800);
+	}
+}
