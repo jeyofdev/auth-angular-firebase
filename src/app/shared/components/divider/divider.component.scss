@@ -1,0 +1,26 @@
+:host ::ng-deep p-divider {
+	display: block;
+	margin: 2.5rem auto;
+	max-width: 250px;
+
+	.p-divider.p-divider-horizontal {
+		margin: 0;
+	}
+}
+
+:host ::ng-deep .p-divider-horizontal::before {
+	border-color: var(--primary-100);
+	opacity: 0.6;
+}
+
+:host ::ng-deep .content-box {
+	padding: 0 0.75rem;
+
+	.content-icon {
+		color: var(--primary-800);
+	}
+
+	.content-label {
+		color: var(--primary-800);
+	}
+}
