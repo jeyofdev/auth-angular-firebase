@@ -125,11 +125,11 @@ span {
 }
 
 label {
-	font-family: $fontFamily;
-	font-size: 0.9rem;
+	font-family: $fontFamilySerif;
+	font-size: 0.85rem;
+	color: var(--primary-700);
 	line-height: $lineHeightSM;
-	font-weight: lighter;
-	color: var(--primary-800);
+	font-weight: 500;
 }
 
 .p-inputtext {
