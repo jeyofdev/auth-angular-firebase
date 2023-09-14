@@ -264,13 +264,13 @@
 }
 
 .p-autocomplete .p-autocomplete-loader {
-  right: 1rem;
+  right: 0.5rem;
 }
 .p-autocomplete.p-autocomplete-dd .p-autocomplete-loader {
-  right: 4rem;
+  right: 3.5rem;
 }
 .p-autocomplete .p-autocomplete-multiple-container {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   gap: 0.5rem;
 }
 .p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled):hover {
@@ -283,7 +283,7 @@
   border-color: #3f51b5;
 }
 .p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token {
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 .p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-input-token input {
   font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
@@ -293,7 +293,7 @@
   margin: 0;
 }
 .p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   background: rgba(63, 81, 181, 0.12);
   color: #3f51b5;
   border-radius: 4px;
@@ -347,16 +347,16 @@ p-autocomplete.ng-dirty.ng-invalid > .p-autocomplete > .p-inputtext {
 }
 
 p-autocomplete.p-autocomplete-clearable .p-inputtext {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 p-autocomplete.p-autocomplete-clearable .p-autocomplete-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 p-autocomplete.p-autocomplete-clearable .p-autocomplete-dd .p-autocomplete-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 4rem;
+  right: 3.5rem;
 }
 
 p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
@@ -572,16 +572,16 @@ p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
 }
 
 p-calendar.p-calendar-clearable .p-inputtext {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 p-calendar.p-calendar-clearable .p-calendar-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 p-calendar.p-calendar-clearable.p-calendar-w-btn .p-calendar-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 4rem;
+  right: 3.5rem;
 }
 
 @media screen and (max-width: 769px) {
@@ -607,7 +607,7 @@ p-calendar.p-calendar-clearable.p-calendar-w-btn .p-calendar-clear-icon {
 .p-cascadeselect .p-cascadeselect-label {
   background: transparent;
   border: 0 none;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
 }
 .p-cascadeselect .p-cascadeselect-label.p-placeholder {
   color: rgba(0, 0, 0, 0.6);
@@ -681,7 +681,7 @@ p-cascadeselect.ng-dirty.ng-invalid > .p-cascadeselect {
 }
 
 p-cascadeselect.p-cascadeselect-clearable .p-cascadeselect-label {
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 p-cascadeselect.p-cascadeselect-clearable .p-cascadeselect-clear-icon {
   color: rgba(0, 0, 0, 0.6);
@@ -760,7 +760,7 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
 }
 
 .p-chips .p-chips-multiple-container {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   gap: 0.5rem;
 }
 .p-chips .p-chips-multiple-container:not(.p-disabled):hover {
@@ -773,7 +773,7 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
   border-color: #3f51b5;
 }
 .p-chips .p-chips-multiple-container .p-chips-token {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   background: rgba(63, 81, 181, 0.12);
   color: #3f51b5;
   border-radius: 4px;
@@ -782,7 +782,7 @@ p-checkbox.ng-dirty.ng-invalid > .p-checkbox > .p-checkbox-box {
   margin-left: 0.5rem;
 }
 .p-chips .p-chips-multiple-container .p-chips-input-token {
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
 }
 .p-chips .p-chips-multiple-container .p-chips-input-token input {
   font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
@@ -797,11 +797,11 @@ p-chips.ng-dirty.ng-invalid > .p-chips > .p-inputtext {
 }
 
 p-chips.p-chips-clearable .p-inputtext {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 p-chips.p-chips-clearable .p-chips-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 .p-colorpicker-preview,
@@ -839,7 +839,7 @@ p-chips.p-chips-clearable .p-chips-clear-icon {
   border-color: #3f51b5;
 }
 .p-dropdown.p-dropdown-clearable .p-dropdown-label {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-dropdown .p-dropdown-label {
   background: transparent;
@@ -881,11 +881,11 @@ p-chips.p-chips-clearable .p-chips-clear-icon {
   border-top-left-radius: 4px;
 }
 .p-dropdown-panel .p-dropdown-header .p-dropdown-filter {
-  padding-right: 2rem;
-  margin-right: -2rem;
+  padding-right: 1.5rem;
+  margin-right: -1.5rem;
 }
 .p-dropdown-panel .p-dropdown-header .p-dropdown-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-dropdown-panel .p-dropdown-items {
@@ -1043,7 +1043,7 @@ p-dropdown.ng-dirty.ng-invalid > .p-dropdown {
   border-top: 1px solid rgba(0, 0, 0, 0.38);
   border-left: 1px solid rgba(0, 0, 0, 0.38);
   border-bottom: 1px solid rgba(0, 0, 0, 0.38);
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   min-width: 2.357rem;
 }
 .p-inputgroup-addon:last-child {
@@ -1116,11 +1116,11 @@ p-inputmask.ng-dirty.ng-invalid > .p-inputtext {
 }
 
 p-inputmask.p-inputmask-clearable .p-inputtext {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 p-inputmask.p-inputmask-clearable .p-inputmask-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 p-inputnumber.ng-dirty.ng-invalid > .p-inputnumber > .p-inputtext {
@@ -1128,18 +1128,18 @@ p-inputnumber.ng-dirty.ng-invalid > .p-inputnumber > .p-inputtext {
 }
 
 p-inputnumber.p-inputnumber-clearable .p-inputnumber-input {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 p-inputnumber.p-inputnumber-clearable .p-inputnumber-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 p-inputnumber.p-inputnumber-clearable .p-inputnumber-buttons-stacked .p-inputnumber-clear-icon {
-  right: 4rem;
+  right: 3.5rem;
 }
 p-inputnumber.p-inputnumber-clearable .p-inputnumber-buttons-horizontal .p-inputnumber-clear-icon {
-  right: 4rem;
+  right: 3.5rem;
 }
 
 .p-inputswitch {
@@ -1190,7 +1190,7 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.87);
   background: #ffffff;
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.38);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   appearance: none;
@@ -1199,26 +1199,20 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 .p-inputtext:enabled:hover {
   border-color: rgba(0, 0, 0, 0.87);
 }
-.p-inputtext:enabled:focus {
-  outline: 0 none;
-  outline-offset: 0;
-  box-shadow: none;
-  border-color: #3f51b5;
-}
 .p-inputtext.ng-dirty.ng-invalid {
   border-color: #b00020;
 }
 .p-inputtext.p-inputtext-sm {
   font-size: 0.875rem;
-  padding: 0.875rem 0.875rem;
+  padding: 0.4375rem 0.4375rem;
 }
 .p-inputtext.p-inputtext-lg {
   font-size: 1.25rem;
-  padding: 1.25rem 1.25rem;
+  padding: 0.625rem 0.625rem;
 }
 
 .p-float-label > label {
-  left: 1rem;
+  left: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
   transition-duration: 0.2s;
 }
@@ -1229,26 +1223,26 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 
 .p-input-icon-left > .p-icon-wrapper.p-icon,
 .p-input-icon-left > i:first-of-type {
-  left: 1rem;
+  left: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .p-input-icon-left > .p-inputtext {
-  padding-left: 3rem;
+  padding-left: 2rem;
 }
 
 .p-input-icon-left.p-float-label > label {
-  left: 3rem;
+  left: 2rem;
 }
 
 .p-input-icon-right > .p-icon-wrapper,
 .p-input-icon-right > i:last-of-type {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 
 .p-input-icon-right > .p-inputtext {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 
 ::-webkit-input-placeholder {
@@ -1279,12 +1273,12 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
 
 .p-inputtext-sm .p-inputtext {
   font-size: 0.875rem;
-  padding: 0.875rem 0.875rem;
+  padding: 0.4375rem 0.4375rem;
 }
 
 .p-inputtext-lg .p-inputtext {
   font-size: 1.25rem;
-  padding: 1.25rem 1.25rem;
+  padding: 0.625rem 0.625rem;
 }
 
 .p-listbox {
@@ -1303,10 +1297,10 @@ p-inputswitch.ng-dirty.ng-invalid > .p-inputswitch {
   border-top-left-radius: 4px;
 }
 .p-listbox .p-listbox-header .p-listbox-filter {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-listbox .p-listbox-header .p-listbox-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-listbox .p-listbox-header .p-checkbox {
@@ -1372,7 +1366,7 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
   border-color: #3f51b5;
 }
 .p-multiselect .p-multiselect-label {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 .p-multiselect .p-multiselect-label.p-placeholder {
@@ -1382,7 +1376,7 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
   gap: 0.5rem;
 }
 .p-multiselect.p-multiselect-chip .p-multiselect-token {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   background: rgba(63, 81, 181, 0.12);
   color: #3f51b5;
   border-radius: 4px;
@@ -1399,7 +1393,7 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
 }
 
 .p-inputwrapper-filled .p-multiselect.p-multiselect-chip .p-multiselect-label {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .p-multiselect-panel {
@@ -1419,10 +1413,10 @@ p-listbox.ng-dirty.ng-invalid > .p-listbox {
   border-top-left-radius: 4px;
 }
 .p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-inputtext {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-multiselect-panel .p-multiselect-header .p-multiselect-filter-container .p-multiselect-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-multiselect-panel .p-multiselect-header .p-checkbox {
@@ -1504,7 +1498,7 @@ p-multiselect.ng-dirty.ng-invalid > .p-multiselect {
 }
 
 p-multiselect.p-multiselect-clearable .p-multiselect-label-container {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 p-multiselect.p-multiselect-clearable .p-multiselect-clear-icon {
   color: rgba(0, 0, 0, 0.6);
@@ -1538,19 +1532,19 @@ p-password.ng-invalid.ng-dirty > .p-password > .p-inputtext {
 }
 
 p-password.p-password-clearable .p-password-input {
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 p-password.p-password-clearable .p-password-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 1rem;
+  right: 0.5rem;
 }
 
 p-password.p-password-clearable.p-password-mask .p-password-input {
-  padding-right: 5rem;
+  padding-right: 3.5rem;
 }
 p-password.p-password-clearable.p-password-mask .p-password-clear-icon {
   color: rgba(0, 0, 0, 0.6);
-  right: 3rem;
+  right: 2rem;
 }
 
 .p-radiobutton {
@@ -1798,14 +1792,14 @@ p-togglebutton.ng-dirty.ng-invalid > .p-togglebutton.p-button {
   border-color: #3f51b5;
 }
 .p-treeselect .p-treeselect-label {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 .p-treeselect .p-treeselect-label.p-placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
 .p-treeselect.p-treeselect-chip .p-treeselect-token {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   margin-right: 0.5rem;
   background: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
@@ -1824,7 +1818,7 @@ p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
 }
 
 .p-inputwrapper-filled .p-treeselect.p-treeselect-chip .p-treeselect-label {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
 }
 
 .p-treeselect-panel {
@@ -1847,17 +1841,17 @@ p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
   margin-right: 0.5rem;
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-filter-container .p-treeselect-filter {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-filter-container .p-treeselect-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-filter-container.p-treeselect-clearable-filter .p-treeselect-filter {
-  padding-right: 4rem;
+  padding-right: 3rem;
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-filter-container.p-treeselect-clearable-filter .p-treeselect-filter-clear-icon {
-  right: 3rem;
+  right: 2rem;
 }
 .p-treeselect-panel .p-treeselect-header .p-treeselect-close {
   width: 2.5rem;
@@ -1898,7 +1892,7 @@ p-treeselect.ng-invalid.ng-dirty > .p-treeselect {
 }
 
 p-treeselect.p-treeselect-clearable .p-treeselect-label-container {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   color: rgba(0, 0, 0, 0.6);
@@ -3481,10 +3475,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-bottom: 0 none;
 }
 .p-orderlist .p-orderlist-filter-container .p-orderlist-filter-input {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-orderlist .p-orderlist-filter-container .p-orderlist-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-orderlist .p-orderlist-list {
@@ -3682,10 +3676,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   border-bottom: 0 none;
 }
 .p-picklist .p-picklist-filter-container .p-picklist-filter-input {
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-picklist .p-picklist-filter-container .p-picklist-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-picklist .p-picklist-list {
@@ -3837,10 +3831,10 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 .p-tree .p-tree-filter-container .p-tree-filter {
   width: 100%;
-  padding-right: 2rem;
+  padding-right: 1.5rem;
 }
 .p-tree .p-tree-filter-container .p-tree-filter-icon {
-  right: 1rem;
+  right: 0.5rem;
   color: rgba(0, 0, 0, 0.6);
 }
 .p-tree .p-treenode-children {
@@ -5780,7 +5774,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-inline-message {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin: 0;
   border-radius: 4px;
 }
@@ -6227,12 +6221,12 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.87);
   border-radius: 16px;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 .p-chip .p-chip-text {
   line-height: 1.5;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 .p-chip .p-chip-icon {
   margin-right: 0.5rem;
@@ -6241,9 +6235,9 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
   margin-left: 0.5rem;
 }
 .p-chip img {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-left: -1rem;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -0.5rem;
   margin-right: 0.5rem;
 }
 .p-chip .pi-chip-remove-icon {
@@ -6257,7 +6251,7 @@ p-treeselect.p-treeselect-clearable .p-treeselect-clear-icon {
 }
 
 .p-inplace .p-inplace-display {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 4px;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
@@ -6835,14 +6829,6 @@ p-calendar.ng-dirty.ng-invalid .p-calendar-w-btn:not(.p-disabled).p-focus {
   background-image: linear-gradient(to bottom, #b00020, #b00020), linear-gradient(to bottom, #b00020, #b00020);
 }
 
-.p-input-filled .p-float-label .p-cascadeselect .p-cascadeselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
-.p-input-filled .p-float-label .p-inputwrapper-filled .p-cascadeselect .p-cascadeselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
 .p-input-filled .p-cascadeselect.p-invalid {
   border-color: transparent;
   background-image: linear-gradient(to bottom, #b00020, #b00020), linear-gradient(to bottom, #b00020, #b00020);
@@ -7230,10 +7216,6 @@ p-inputnumber.ng-dirty.ng-invalid .p-inputtext:enabled:focus {
   color: #3f51b5;
 }
 
-.p-input-filled .p-float-label .p-inputtext {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
 .p-input-filled .p-float-label input:focus ~ label,
 .p-input-filled .p-float-label input.p-filled ~ label,
 .p-input-filled .p-float-label textarea:focus ~ label,
@@ -7382,14 +7364,6 @@ p-inputnumber.ng-dirty.ng-invalid .p-inputtext:enabled:focus {
   margin-bottom: 0.25rem;
 }
 
-.p-input-filled .p-float-label .p-multiselect .p-multiselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
-.p-input-filled .p-float-label .p-inputwrapper-filled .p-multiselect .p-multiselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
 .p-input-filled .p-float-label .p-inputwrapper-filled .p-multiselect.p-multiselect-chip .p-multiselect-token {
   padding-top: 0;
   padding-bottom: 0;
@@ -7737,14 +7711,6 @@ p-multiselect.ng-dirty.ng-invalid .p-multiselect:not(.p-disabled).p-focus {
   margin-bottom: 0.25rem;
 }
 
-.p-input-filled .p-float-label .p-treeselect .p-treeselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
-.p-input-filled .p-float-label .p-inputwrapper-filled .p-treeselect .p-treeselect-label {
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
-}
 .p-input-filled .p-float-label .p-inputwrapper-filled .p-treeselect.p-treeselect-chip .p-treeselect-token {
   padding-top: 0;
   padding-bottom: 0;

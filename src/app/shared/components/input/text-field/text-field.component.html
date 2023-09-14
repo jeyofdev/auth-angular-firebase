@@ -1,0 +1,16 @@
+<div class="form-control">
+	<label [htmlFor]="name">{{ label }}</label>
+
+	<span [class]="class">
+		<input
+			pInputText
+			type="text"
+			[id]="name"
+			[name]="name"
+			[value]="value"
+			[disabled]="disabled"
+			(input)="onInputChange($event)"
+			(focus)="markAsTouched()"
+		/>
+	</span>
+</div>
