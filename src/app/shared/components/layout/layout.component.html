@@ -2,11 +2,11 @@
 	<div class="content-container">
 		<div class="content-box">
 			<div class="content-top">
-				<h1 class="content-title">
+				<h1 class="content-title text-3xl">
 					{{ pageTitle }}
 				</h1>
 
-				<h5 class="content-subtitle">
+				<h5 class="content-subtitle text-sm">
 					{{ subtitle }}
 				</h5>
 			</div>
@@ -14,10 +14,11 @@
 			<ng-content select="[templateForm]"></ng-content>
 
 			<app-divider
-				maxWidth="250px"
+				maxWidth="100%"
 				layout="horizontal"
 				label="Social Signup"
 				backgroundColor="#fff"
+				margin="1rem 0rem"
 			></app-divider>
 
 			<div class="social-connect-box">
