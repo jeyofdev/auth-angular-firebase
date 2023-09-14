@@ -1,0 +1,8 @@
+<p-button [type]="type" [disabled]="disabled" [styleClass]="styleClass">
+	<div class="btn-content">
+		<i *ngIf="icon" [class]="'icon mr ' + icon"></i>
+		<h5 class="button-label">
+			<ng-content></ng-content>
+		</h5>
+	</div>
+</p-button>

@@ -41,9 +41,15 @@
 						[parentForm]="mainForm"
 					></app-text-field>
 				</div>
-			</ng-container>
 
-			<button [disabled]="!mainForm.valid">Register</button>
+				<app-button-rounded
+					type="submit"
+					severity="primary"
+					[outline]="false"
+					[disabled]="!mainForm.valid"
+					>Register</app-button-rounded
+				>
+			</ng-container>
 		</form>
 	</div>
 </app-layout>
