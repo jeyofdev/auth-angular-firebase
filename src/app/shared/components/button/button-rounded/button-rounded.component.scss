@@ -1,0 +1,93 @@
+@import '../../../../../theme/scss/light/theme/theme';
+
+:host ::ng-deep .p-button-rounded {
+	height: auto;
+	width: 35px;
+	height: 35px;
+
+	.icon {
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+
+	.button-label {
+		font-size: 0.9rem;
+	}
+
+	.mr {
+		margin-right: 0.8rem;
+	}
+}
+
+:host ::ng-deep .p-element {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.btn-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+:host ::ng-deep .size-small {
+	padding: 0.25rem 0.35rem;
+}
+
+:host ::ng-deep .size-medium {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+:host ::ng-deep .size-large {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+:host ::ng-deep .size-normal {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+
+:host ::ng-deep .size-full {
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+:host ::ng-deep .p-button-primary,
+:host ::ng-deep .p-button-danger,
+:host ::ng-deep .p-button-success,
+:host ::ng-deep .p-button-help,
+:host ::ng-deep .p-button-info,
+:host ::ng-deep .p-button-warning {
+	.button-label {
+		color: $light;
+	}
+}
+
+:host ::ng-deep .p-button-primary.p-button-outlined .button-label {
+	color: var(--primary-500);
+}
+
+:host ::ng-deep .p-button-danger.p-button-outlined .button-label {
+	color: var(--danger-500);
+}
+
+:host ::ng-deep .p-button-success.p-button-outlined .button-label {
+	color: var(--success-500);
+}
+
+:host ::ng-deep .p-button-help.p-button-outlined .button-label {
+	color: var(--help-500);
+}
+
+:host ::ng-deep .p-button-info.p-button-outlined .button-label {
+	color: var(--info-500);
+}
+
+:host ::ng-deep .p-button-warning.p-button-outlined .button-label {
+	color: var(--warning-500);
+}
