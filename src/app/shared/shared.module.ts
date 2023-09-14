@@ -7,6 +7,7 @@ import { ButtonSocialComponent } from './components/button/button-social/button-
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextFieldComponent } from './components/input/text-field/text-field.component';
 import { ButtonRoundedComponent } from './components/button/button-rounded/button-rounded.component';
+import { PasswordFieldComponent } from './components/input/password-field/password-field.component';
 
 @NgModule({
 	declarations: [
@@ -15,6 +16,7 @@ import { ButtonRoundedComponent } from './components/button/button-rounded/butto
 		ButtonSocialComponent,
 		TextFieldComponent,
 		ButtonRoundedComponent,
+		PasswordFieldComponent,
 	],
 	imports: [CommonModule, PrimengModule, ReactiveFormsModule],
 	exports: [
@@ -23,6 +25,7 @@ import { ButtonRoundedComponent } from './components/button/button-rounded/butto
 		ReactiveFormsModule,
 		TextFieldComponent,
 		ButtonRoundedComponent,
+		PasswordFieldComponent,
 	],
 })
 export class SharedModule {}
