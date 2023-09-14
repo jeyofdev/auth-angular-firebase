@@ -7,17 +7,24 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 	styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+	hidePassword!: boolean;
+
 	mainForm!: FormGroup;
 	personnalInfosForm!: FormGroup;
+	passwordForm!: FormGroup;
 
 	firstnameCtrl!: FormControl<string | null>;
 	lastnameCtrl!: FormControl<string | null>;
 	usernameCtrl!: FormControl<string | null>;
 	emailCtrl!: FormControl<string | null>;
+	passwordCtrl!: FormControl<string | null>;
+	confirmPasswordCtrl!: FormControl<string | null>;
 
 	constructor(private formBuilder: FormBuilder) {}
 
 	ngOnInit(): void {
+		this.hidePassword = false;
+
 		this.initFormControls();
 		this.initFormGroups();
 		this.initMainForm();
@@ -32,6 +39,7 @@ export class RegisterComponent implements OnInit {
 	private initMainForm(): void {
 		this.mainForm = this.formBuilder.group({
 			personnalInfos: this.personnalInfosForm,
+			password: this.passwordForm,
 		});
 	}
 
@@ -42,6 +50,11 @@ export class RegisterComponent implements OnInit {
 			username: this.usernameCtrl,
 			email: this.emailCtrl,
 		});
+
+		this.passwordForm = this.formBuilder.group({
+			password: this.passwordCtrl,
+			confirmPassword: this.confirmPasswordCtrl,
+		});
 	}
 
 	private initFormControls(): void {
@@ -49,5 +62,7 @@ export class RegisterComponent implements OnInit {
 		this.lastnameCtrl = this.formBuilder.control('');
 		this.usernameCtrl = this.formBuilder.control('');
 		this.emailCtrl = this.formBuilder.control('');
+		this.passwordCtrl = this.formBuilder.control('');
+		this.confirmPasswordCtrl = this.formBuilder.control('');
 	}
 }

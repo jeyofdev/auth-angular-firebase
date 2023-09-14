@@ -52,15 +52,40 @@
 						[parentForm]="mainForm"
 					></app-text-field>
 				</div>
-
-				<app-button-rounded
-					type="submit"
-					severity="primary"
-					[outline]="false"
-					[disabled]="!mainForm.valid"
-					>Register</app-button-rounded
-				>
 			</ng-container>
+
+			<ng-container [formGroup]="passwordForm">
+				<div class="form-row">
+					<app-password-field
+						name="password"
+						label="Password *"
+						[toggleMask]="true"
+						[feedback]="false"
+						formControlName="password"
+						groupName="passwordForm"
+						[parentForm]="mainForm"
+					></app-password-field>
+
+					<app-password-field
+						name="confirmPassword"
+						label="Confirm password *"
+						[toggleMask]="true"
+						[feedback]="false"
+						formControlName="password"
+						formControlName="confirmPassword"
+						groupName="passwordForm"
+						[parentForm]="mainForm"
+					></app-password-field>
+				</div>
+			</ng-container>
+
+			<app-button-rounded
+				type="submit"
+				severity="primary"
+				[outline]="false"
+				[disabled]="!mainForm.valid"
+				>Register</app-button-rounded
+			>
 		</form>
 	</div>
 </app-layout>
