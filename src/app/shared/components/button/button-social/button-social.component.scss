@@ -8,13 +8,13 @@
 
 	.icon {
 		font-size: 1rem;
-		color: var(--primary-800);
+		color: var(--primary-700);
 		line-height: 1.2;
 	}
 
 	.button-label {
 		font-size: 0.9rem;
-		color: var(--primary-800);
+		color: var(--primary-700);
 	}
 
 	.mr {
@@ -26,6 +26,10 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
+}
+
+:host ::ng-deep .p-button-rounded.p-button-outlined:enabled:hover {
+	color: var(--primary-100);
 }
 
 :host ::ng-deep .p-button:enabled:hover {

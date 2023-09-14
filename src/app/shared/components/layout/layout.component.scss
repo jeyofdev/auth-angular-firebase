@@ -22,6 +22,19 @@
 	.content-box {
 		grid-column: 1 / span 4;
 		padding: 1rem;
+
+		.content-title {
+			margin-bottom: 0.9rem;
+			text-align: left;
+			font-family: $fontFamilySansSerif;
+		}
+
+		.content-subtitle {
+			text-align: left;
+			font-family: $fontFamilySansSerif3;
+			font-weight: normal;
+			color: var(--primary-700);
+		}
 	}
 
 	.img-box {

@@ -28,6 +28,11 @@ $fontFamily:
 	Arial,
 	Lucida Grande,
 	sans-serif !default;
+$fontFamilySansSerif: 'Poppins', sans-serif !default;
+$fontFamilySansSerif2: 'Raleway', sans-serif !default;
+$fontFamilySansSerif3: 'Open Sans', sans-serif !default;
+$fontFamilySerif: 'Playfair Display', serif !default;
+
 $fontSize: 1rem !default;
 $fontWeight: normal !default;
 $textColor: $emphasis-high !default;
