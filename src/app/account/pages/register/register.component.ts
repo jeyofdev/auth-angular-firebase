@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
 			firstname: this.firstnameCtrl,
 			lastname: this.lastnameCtrl,
 			username: this.usernameCtrl,
+			email: this.emailCtrl,
 		});
 	}
 
@@ -47,5 +48,6 @@ export class RegisterComponent implements OnInit {
 		this.firstnameCtrl = this.formBuilder.control('');
 		this.lastnameCtrl = this.formBuilder.control('');
 		this.usernameCtrl = this.formBuilder.control('');
+		this.emailCtrl = this.formBuilder.control('');
 	}
 }

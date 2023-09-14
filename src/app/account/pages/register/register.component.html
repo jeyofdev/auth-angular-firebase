@@ -42,6 +42,17 @@
 					></app-text-field>
 				</div>
 
+				<div class="form-row">
+					<app-text-field
+						type="text"
+						name="email"
+						label="Email *"
+						formControlName="email"
+						groupName="personnalInfosForm"
+						[parentForm]="mainForm"
+					></app-text-field>
+				</div>
+
 				<app-button-rounded
 					type="submit"
 					severity="primary"
