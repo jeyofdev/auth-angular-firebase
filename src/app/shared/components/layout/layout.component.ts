@@ -1,9 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProviderEnum } from '../../enum/provider.enum';
-import { ISocialProvider } from 'src/app/core/model/social-provider.model';
+import { ISocialProvider } from '../../../core/model/social-provider.model';
 import { GoogleAuthProvider, GithubAuthProvider } from '@angular/fire/auth';
 import { AuthService } from '../../../account/services/auth.service';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { UserActions } from '../../../account/state/user/actions/user-index.actions';
+import { IUser } from '../../../account/interfaces/user.interface';
 
 @Component({
 	selector: 'app-layout',
@@ -21,6 +24,7 @@ export class LayoutComponent implements OnInit {
 
 	constructor(
 		private authService: AuthService,
+		private store: Store,
 		private router: Router,
 	) {}
 
@@ -51,7 +55,28 @@ export class LayoutComponent implements OnInit {
 			currentProvider = new GithubAuthProvider();
 		}
 
-		this.authService.loginWithPopup(currentProvider).then(() => {
+		this.authService.loginWithPopup(currentProvider).then(currentUser => {
+			const newUser: IUser = {
+				account: {
+					createdAt: currentUser.user.metadata.creationTime ?? '',
+					lastLogin: currentUser.user.metadata.lastSignInTime ?? '',
+				},
+				profile: {
+					firstname: '',
+					lastname: '',
+					username: currentUser.user.displayName ?? '',
+					email: currentUser.user.email ?? '',
+					phone: currentUser.user.phoneNumber ?? '',
+					avatar: currentUser.user.photoURL ?? '',
+				},
+			};
+
+			this.store.dispatch(
+				UserActions.informations.addUser({
+					payload: { userId: currentUser.user.uid, data: newUser },
+				}),
+			);
+
 			this.router.navigateByUrl('/account/home');
 		});
 	}

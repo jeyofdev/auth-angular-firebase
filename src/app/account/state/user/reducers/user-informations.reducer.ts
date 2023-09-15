@@ -1,5 +1,6 @@
-import { createReducer } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 import { IUserAccount, IUserProfile } from '../../../interfaces/user.interface';
+import { UserActions } from '../actions/user-index.actions';
 
 export const UserInformationsFeatureKey = 'informations';
 
@@ -29,4 +30,14 @@ export const initialUserInformationsState: IUserInformationsState = {
 
 export const userInformationsReducer = createReducer(
 	initialUserInformationsState,
+	on(
+		UserActions.informations.addUser,
+		(state, actions): IUserInformationsState => {
+			return {
+				...state,
+				account: actions.payload.data.account,
+				profile: actions.payload.data.profile,
+			};
+		},
+	),
 );

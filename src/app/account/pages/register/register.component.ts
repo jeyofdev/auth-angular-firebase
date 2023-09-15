@@ -11,6 +11,9 @@ import { inputEqualValidator } from '../../validators/input-equal.validator';
 import { FirebaseError } from '@angular/fire/app';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { IUser } from '../../interfaces/user.interface';
+import { Store } from '@ngrx/store';
+import { UserActions } from '../../state/user/actions/user-index.actions';
 
 @Component({
 	selector: 'app-register',
@@ -40,6 +43,7 @@ export class RegisterComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
 		private router: Router,
+		private store: Store,
 	) {}
 
 	ngOnInit(): void {
@@ -62,7 +66,28 @@ export class RegisterComponent implements OnInit {
 				this.mainForm.value.personnalInfos.email,
 				this.mainForm.value.password.password,
 			)
-			.then(() => {
+			.then(currentUser => {
+				const newUser: IUser = {
+					account: {
+						createdAt: currentUser.user.metadata.creationTime ?? '',
+						lastLogin: currentUser.user.metadata.lastSignInTime ?? '',
+					},
+					profile: {
+						firstname: this.mainForm.value.personnalInfos.firstname,
+						lastname: this.mainForm.value.personnalInfos.lastname,
+						username: this.mainForm.value.personnalInfos.username,
+						email: currentUser.user.email ?? '',
+						phone: currentUser.user.phoneNumber ?? '',
+						avatar: currentUser.user.photoURL ?? '',
+					},
+				};
+
+				this.store.dispatch(
+					UserActions.informations.addUser({
+						payload: { userId: currentUser.user.uid, data: newUser },
+					}),
+				);
+
 				this.formErrorMessage = null;
 				this.mainForm.reset();
 				this.router.navigateByUrl('/account/home');

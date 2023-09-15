@@ -10,6 +10,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -19,9 +20,19 @@ import { EffectsModule } from '@ngrx/effects';
 		SharedModule,
 		provideFirebaseApp(() => initializeApp(environment.firebase)),
 		provideAuth(() => getAuth()),
-		StoreModule.forRoot({}, {}),
-		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+		provideFirestore(() => getFirestore()),
+		StoreModule.forRoot(
+			{},
+			{
+				runtimeChecks: {
+					strictActionTypeUniqueness: true,
+					strictActionImmutability: true,
+					strictStateImmutability: true,
+				},
+			},
+		),
 		EffectsModule.forRoot([]),
+		StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
 	],
 	providers: [],
 	bootstrap: [AppComponent],
