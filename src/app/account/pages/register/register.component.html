@@ -85,7 +85,11 @@
 				</div>
 			</ng-container>
 
-			<app-button-rounded type="submit" severity="primary" [outline]="false"
+			<app-button-rounded
+				type="submit"
+				severity="primary"
+				[outline]="false"
+				[disabled]="!mainForm.valid"
 				>Register</app-button-rounded
 			>
 		</form>

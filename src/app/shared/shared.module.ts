@@ -10,6 +10,7 @@ import { ButtonRoundedComponent } from './components/button/button-rounded/butto
 import { PasswordFieldComponent } from './components/input/password-field/password-field.component';
 import { RouterModule } from '@angular/router';
 import { RedirectComponent } from './components/redirect/redirect.component';
+import { ErrorFieldComponent } from './components/error/error-field/error-field.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,7 @@ import { RedirectComponent } from './components/redirect/redirect.component';
 		ButtonRoundedComponent,
 		PasswordFieldComponent,
 		RedirectComponent,
+		ErrorFieldComponent,
 	],
 	imports: [CommonModule, PrimengModule, RouterModule, ReactiveFormsModule],
 	exports: [
