@@ -1,0 +1,20 @@
+@import '../../../../theme/scss/light/theme/theme';
+
+:host ::ng-deep .redirect {
+	display: flex;
+	justify-content: center;
+
+	p {
+		font-family: $fontFamilySansSerif2;
+		font-size: 0.8rem;
+		color: var(--primary-700);
+		line-height: $lineHeightSM;
+		font-weight: 500;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--primary-500);
+		font-weight: bold;
+	}
+}

@@ -33,10 +33,12 @@
 					>
 				</div>
 
-				<div class="redirect">
-					<p>
-						Don't have an Account ? <a routerLink="/account/signin">Signin</a>
-					</p>
+				<div class="redirect-box">
+					<app-redirect
+						[label]="redirectLabel"
+						[routerLink]="redirectRouterLink"
+						[labelLink]="redirectLabelLink"
+					></app-redirect>
 				</div>
 			</div>
 		</div>
