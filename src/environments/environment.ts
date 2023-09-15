@@ -2,12 +2,14 @@
 export const environment = {
 	production: false,
 	firebase: {
-		projectId: process.env['PROJECT_ID'],
-		appId: process.env['APP_ID'],
-		databaseURL: process.env['DATABASE_URL'],
-		storageBucket: process.env['STORAGE_BUCKET'],
-		apiKey: process.env['API_KEY'],
-		authDomain: process.env['AUTH_DOMAIN'],
-		messagingSenderId: process.env['MESSAGING_SENDER_ID'],
+		projectId: 'auth-test-61a1a',
+		appId: '1:839203747570:web:8a944d4c2defc2bd9d426b',
+		databaseURL:
+			'https://auth-test-61a1a-default-rtdb.europe-west1.firebasedatabase.app',
+		storageBucket: 'auth-test-61a1a.appspot.com',
+		locationId: 'europe-west',
+		apiKey: 'AIzaSyDfxIUuNEa8ph7oVtv-oKfE2IZzyl2ZWs0',
+		authDomain: 'auth-test-61a1a.firebaseapp.com',
+		messagingSenderId: '839203747570',
 	},
 };
