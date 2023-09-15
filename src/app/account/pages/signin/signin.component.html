@@ -19,6 +19,7 @@
 					label="Email *"
 					formControlName="email"
 					[parentForm]="mainForm"
+					[validationMessage]="inputsValidationMessages.email"
 				></app-text-field>
 			</div>
 
@@ -30,6 +31,7 @@
 					[feedback]="false"
 					formControlName="password"
 					[parentForm]="mainForm"
+					[validationMessage]="inputsValidationMessages.password"
 				></app-password-field>
 			</div>
 
