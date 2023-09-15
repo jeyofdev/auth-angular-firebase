@@ -7,7 +7,7 @@ import {
 	initialUserInformationsState,
 	userInformationsReducer,
 } from './user-informations.reducer';
-import { log } from './user.meta-reducer';
+import { hydration, log } from './user.meta-reducer';
 
 export const userFeatureKey = 'user';
 
@@ -26,4 +26,6 @@ export const reducers = combineReducers(
 	initialUserState,
 );
 
-export const metaReducers: MetaReducer[] = isDevMode() ? [log] : [];
+export const metaReducers: MetaReducer[] = isDevMode()
+	? [log, hydration]
+	: [hydration];
