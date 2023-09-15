@@ -19,6 +19,8 @@
 			>
 			</app-alert>
 
+			<app-alert [message]="formErrorMessage" severity="error"></app-alert>
+
 			<ng-container [formGroup]="personnalInfosForm">
 				<div class="form-row">
 					<app-text-field
@@ -85,7 +87,6 @@
 						label="Confirm password *"
 						[toggleMask]="true"
 						[feedback]="false"
-						formControlName="password"
 						formControlName="confirmPassword"
 						groupName="passwordForm"
 						[parentForm]="mainForm"

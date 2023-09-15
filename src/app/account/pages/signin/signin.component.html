@@ -12,6 +12,8 @@
 			[formGroup]="mainForm"
 			(ngSubmit)="onMainFormSubmit()"
 		>
+			<app-alert [message]="formErrorMessage" severity="error"></app-alert>
+
 			<div class="form-row">
 				<app-text-field
 					type="text"
