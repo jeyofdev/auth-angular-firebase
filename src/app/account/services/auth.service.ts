@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import {
 	Auth,
+	createUserWithEmailAndPassword,
 	GoogleAuthProvider,
 	GithubAuthProvider,
 	onAuthStateChanged,
@@ -31,5 +32,9 @@ export class AuthService {
 		provider: GoogleAuthProvider | GithubAuthProvider,
 	): Promise<UserCredential> {
 		return signInWithPopup(this.auth, provider);
+	}
+
+	register(email: string, password: string): Promise<UserCredential> {
+		return createUserWithEmailAndPassword(this.auth, email, password);
 	}
 }
