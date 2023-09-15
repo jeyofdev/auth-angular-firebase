@@ -66,3 +66,24 @@ export const registerValidationMessages = {
 		},
 	},
 };
+
+export const signinValidationMessages = {
+	email: {
+		required: { message: 'This field is required' },
+		pattern: {
+			regex: regexEmail,
+			message: 'Your email is not in a valid format',
+		},
+	},
+	password: {
+		required: { message: 'This field is required' },
+		minlength: {
+			message: 'This field must contain at least 8 characters',
+			value: 8,
+		},
+		maxlength: {
+			message: 'This field must contain a maximum of 100 characters',
+			value: 100,
+		},
+	},
+};

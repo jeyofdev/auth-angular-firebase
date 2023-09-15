@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+	FormBuilder,
+	FormControl,
+	FormGroup,
+	Validators,
+} from '@angular/forms';
+import { signinValidationMessages } from '../../validations/messages.validation';
 
 @Component({
 	selector: 'app-signin',
@@ -13,10 +19,14 @@ export class SigninComponent implements OnInit {
 	emailCtrl!: FormControl<string | null>;
 	passwordCtrl!: FormControl<string | null>;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	inputsValidationMessages!: any;
+
 	constructor(private formBuilder: FormBuilder) {}
 
 	ngOnInit(): void {
 		this.hidePassword = false;
+		this.inputsValidationMessages = signinValidationMessages;
 
 		this.initFormControls();
 		this.initMainForm();
@@ -36,7 +46,18 @@ export class SigninComponent implements OnInit {
 	}
 
 	private initFormControls(): void {
-		this.emailCtrl = this.formBuilder.control('');
-		this.passwordCtrl = this.formBuilder.control('');
+		this.emailCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.pattern(this.inputsValidationMessages.email.pattern.regex),
+		]);
+		this.passwordCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				this.inputsValidationMessages.password.minlength.value,
+			),
+			Validators.maxLength(
+				this.inputsValidationMessages.password.maxlength.value,
+			),
+		]);
 	}
 }
