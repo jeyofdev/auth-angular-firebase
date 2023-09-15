@@ -1,41 +1,43 @@
 <div class="layout-container">
 	<div class="content-container">
 		<div class="content-box">
-			<div class="content-top">
-				<h1 class="content-title text-3xl">
-					{{ pageTitle }}
-				</h1>
+			<div class="content-box-in">
+				<div class="content-top">
+					<h1 class="content-title text-3xl">
+						{{ pageTitle }}
+					</h1>
 
-				<h5 class="content-subtitle text-sm">
-					{{ subtitle }}
-				</h5>
-			</div>
+					<h5 class="content-subtitle text-sm">
+						{{ subtitle }}
+					</h5>
+				</div>
 
-			<ng-content select="[templateForm]"></ng-content>
+				<ng-content select="[templateForm]"></ng-content>
 
-			<app-divider
-				maxWidth="100%"
-				layout="horizontal"
-				label="Social Signup"
-				backgroundColor="#fff"
-				margin="2rem 0rem"
-			></app-divider>
+				<app-divider
+					maxWidth="100%"
+					layout="horizontal"
+					label="Social Signup"
+					backgroundColor="#fff"
+					margin="2rem 0rem"
+				></app-divider>
 
-			<div class="social-connect-box">
-				<app-button-social
-					*ngFor="let provider of socialProviders"
-					type="button"
-					[outline]="provider.outline"
-					[icon]="provider.icon"
-					(click)="loginWithProvider(provider.name)"
-					>{{ provider.label }}</app-button-social
-				>
-			</div>
+				<div class="social-connect-box">
+					<app-button-social
+						*ngFor="let provider of socialProviders"
+						type="button"
+						[outline]="provider.outline"
+						[icon]="provider.icon"
+						(click)="loginWithProvider(provider.name)"
+						>{{ provider.label }}</app-button-social
+					>
+				</div>
 
-			<div class="redirect">
-				<p>
-					Don't have an Account ? <a routerLink="/account/signin">Signin</a>
-				</p>
+				<div class="redirect">
+					<p>
+						Don't have an Account ? <a routerLink="/account/signin">Signin</a>
+					</p>
+				</div>
 			</div>
 		</div>
 
