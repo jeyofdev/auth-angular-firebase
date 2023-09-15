@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {
 	FormBuilder,
@@ -32,7 +33,10 @@ export class RegisterComponent implements OnInit {
 	inputsValidationMessages!: any;
 	showPasswordEqualError$!: Observable<boolean>;
 
-	constructor(private formBuilder: FormBuilder) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
+	) {}
 
 	ngOnInit(): void {
 		this.hidePassword = false;
@@ -45,9 +49,22 @@ export class RegisterComponent implements OnInit {
 	}
 
 	onMainFormSubmit(): void {
-		// todo register user with form datas
-		// eslint-disable-next-line no-console
-		console.log(this.mainForm.value);
+		this.registerWithEmail();
+	}
+
+	private registerWithEmail() {
+		this.authService
+			.register(
+				this.mainForm.value.personnalInfos.email,
+				this.mainForm.value.password.password,
+			)
+			.then(() => {
+				this.mainForm.reset();
+			})
+			.catch((error: unknown) => {
+				// eslint-disable-next-line no-console
+				console.log(error);
+			});
 	}
 
 	private initMainForm(): void {

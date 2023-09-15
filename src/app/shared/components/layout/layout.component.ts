@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ProviderEnum } from '../../enum/provider.enum';
 import { ISocialProvider } from 'src/app/core/model/social-provider.model';
+import { GoogleAuthProvider, GithubAuthProvider } from '@angular/fire/auth';
+import { AuthService } from '../../../account/services/auth.service';
 
 @Component({
 	selector: 'app-layout',
@@ -15,6 +17,8 @@ export class LayoutComponent implements OnInit {
 	@Input({ required: true }) redirectLabelLink!: string;
 
 	socialProviders!: ISocialProvider[];
+
+	constructor(private authService: AuthService) {}
 
 	ngOnInit(): void {
 		this.socialProviders = [
@@ -36,9 +40,13 @@ export class LayoutComponent implements OnInit {
 	}
 
 	loginWithProvider(provider: ProviderEnum): void {
-		// eslint-disable-next-line no-console
-		console.log(provider);
+		let currentProvider;
+		if (provider === ProviderEnum.GOOGLE) {
+			currentProvider = new GoogleAuthProvider();
+		} else {
+			currentProvider = new GithubAuthProvider();
+		}
 
-		// todo login with social provider
+		this.authService.loginWithPopup(currentProvider);
 	}
 }
