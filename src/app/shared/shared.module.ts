@@ -9,6 +9,7 @@ import { TextFieldComponent } from './components/input/text-field/text-field.com
 import { ButtonRoundedComponent } from './components/button/button-rounded/button-rounded.component';
 import { PasswordFieldComponent } from './components/input/password-field/password-field.component';
 import { RouterModule } from '@angular/router';
+import { RedirectComponent } from './components/redirect/redirect.component';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
 		TextFieldComponent,
 		ButtonRoundedComponent,
 		PasswordFieldComponent,
+		RedirectComponent,
 	],
 	imports: [CommonModule, PrimengModule, RouterModule, ReactiveFormsModule],
 	exports: [
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
 		TextFieldComponent,
 		ButtonRoundedComponent,
 		PasswordFieldComponent,
+		RedirectComponent,
 	],
 })
 export class SharedModule {}

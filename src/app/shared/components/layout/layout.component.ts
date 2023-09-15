@@ -10,6 +10,9 @@ import { ISocialProvider } from 'src/app/core/model/social-provider.model';
 export class LayoutComponent implements OnInit {
 	@Input({ required: true }) pageTitle!: string;
 	@Input() subtitle!: string;
+	@Input({ required: true }) redirectLabel!: string;
+	@Input({ required: true }) redirectRouterLink!: string;
+	@Input({ required: true }) redirectLabelLink!: string;
 
 	socialProviders!: ISocialProvider[];
 
