@@ -6,6 +6,7 @@ import {
 	Validators,
 } from '@angular/forms';
 import { signinValidationMessages } from '../../validations/messages.validation';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
 	selector: 'app-signin',
@@ -22,7 +23,10 @@ export class SigninComponent implements OnInit {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	inputsValidationMessages!: any;
 
-	constructor(private formBuilder: FormBuilder) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
+	) {}
 
 	ngOnInit(): void {
 		this.hidePassword = false;
@@ -33,9 +37,19 @@ export class SigninComponent implements OnInit {
 	}
 
 	onMainFormSubmit(): void {
-		// todo login user with form datas
-		// eslint-disable-next-line no-console
-		console.log(this.mainForm.value);
+		this.signinWithEmail();
+	}
+
+	private signinWithEmail() {
+		this.authService
+			.login(this.mainForm.value.email, this.mainForm.value.password)
+			.then(() => {
+				this.mainForm.reset();
+			})
+			.catch((error: unknown) => {
+				// eslint-disable-next-line no-console
+				console.log(error);
+			});
 	}
 
 	private initMainForm() {

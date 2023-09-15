@@ -6,6 +6,7 @@ import {
 	GoogleAuthProvider,
 	GithubAuthProvider,
 	onAuthStateChanged,
+	signInWithEmailAndPassword,
 	signInWithPopup,
 	UserCredential,
 } from '@angular/fire/auth';
@@ -36,5 +37,9 @@ export class AuthService {
 
 	register(email: string, password: string): Promise<UserCredential> {
 		return createUserWithEmailAndPassword(this.auth, email, password);
+	}
+
+	login(email: string, password: string): Promise<UserCredential> {
+		return signInWithEmailAndPassword(this.auth, email, password);
 	}
 }
