@@ -70,6 +70,7 @@
 						formControlName="password"
 						groupName="passwordForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.password"
 					></app-password-field>
 
 					<app-password-field
@@ -81,6 +82,7 @@
 						formControlName="confirmPassword"
 						groupName="passwordForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.confirmPassword"
 					></app-password-field>
 				</div>
 			</ng-container>

@@ -103,7 +103,24 @@ export class RegisterComponent implements OnInit {
 			Validators.pattern(this.inputsValidationMessages.email.pattern.regex),
 		]);
 
-		this.passwordCtrl = this.formBuilder.control('');
-		this.confirmPasswordCtrl = this.formBuilder.control('');
+		this.passwordCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				this.inputsValidationMessages.password.minlength.value,
+			),
+			Validators.maxLength(
+				this.inputsValidationMessages.password.maxlength.value,
+			),
+		]);
+
+		this.confirmPasswordCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				this.inputsValidationMessages.confirmPassword.minlength.value,
+			),
+			Validators.maxLength(
+				this.inputsValidationMessages.confirmPassword.maxlength.value,
+			),
+		]);
 	}
 }
