@@ -11,6 +11,7 @@ import { PasswordFieldComponent } from './components/input/password-field/passwo
 import { RouterModule } from '@angular/router';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { ErrorFieldComponent } from './components/error/error-field/error-field.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { ErrorFieldComponent } from './components/error/error-field/error-field.
 		PasswordFieldComponent,
 		RedirectComponent,
 		ErrorFieldComponent,
+		AlertComponent,
 	],
 	imports: [CommonModule, PrimengModule, RouterModule, ReactiveFormsModule],
 	exports: [
@@ -32,6 +34,7 @@ import { ErrorFieldComponent } from './components/error/error-field/error-field.
 		ButtonRoundedComponent,
 		PasswordFieldComponent,
 		RedirectComponent,
+		AlertComponent,
 	],
 })
 export class SharedModule {}

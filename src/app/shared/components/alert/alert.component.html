@@ -1,0 +1,11 @@
+<ng-container *ngIf="message">
+	<p-messages [severity]="severity">
+		<ng-template pTemplate>
+			<ng-container *ngIf="icon">
+				<i [class]="'p-message-icon ' + icon"></i>
+			</ng-container>
+
+			<span>{{ message }}</span>
+		</ng-template>
+	</p-messages>
+</ng-container>

@@ -65,6 +65,9 @@ export const registerValidationMessages = {
 			value: 100,
 		},
 	},
+	passwordEqual: {
+		message: 'The Passwords must match',
+	},
 };
 
 export const signinValidationMessages = {
