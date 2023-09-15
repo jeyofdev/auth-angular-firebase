@@ -13,8 +13,10 @@
 	}
 
 	.button-label {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 		color: var(--primary-700);
+		font-family: $fontFamilySansSerif1;
+		font-weight: initial;
 	}
 
 	.mr {

@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TextFieldComponent } from './components/input/text-field/text-field.component';
 import { ButtonRoundedComponent } from './components/button/button-rounded/button-rounded.component';
 import { PasswordFieldComponent } from './components/input/password-field/password-field.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -18,7 +19,7 @@ import { PasswordFieldComponent } from './components/input/password-field/passwo
 		ButtonRoundedComponent,
 		PasswordFieldComponent,
 	],
-	imports: [CommonModule, PrimengModule, ReactiveFormsModule],
+	imports: [CommonModule, PrimengModule, RouterModule, ReactiveFormsModule],
 	exports: [
 		PrimengModule,
 		LayoutComponent,
