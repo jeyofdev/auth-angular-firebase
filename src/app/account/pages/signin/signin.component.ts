@@ -8,6 +8,7 @@ import {
 import { signinValidationMessages } from '../../validations/messages.validation';
 import { FirebaseError } from '@angular/fire/app';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-signin',
@@ -28,6 +29,7 @@ export class SigninComponent implements OnInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
+		private router: Router,
 	) {}
 
 	ngOnInit(): void {
@@ -48,6 +50,7 @@ export class SigninComponent implements OnInit {
 			.then(() => {
 				this.formErrorMessage = null;
 				this.mainForm.reset();
+				this.router.navigateByUrl('/account/home');
 			})
 			.catch((error: unknown) => {
 				if (error instanceof FirebaseError) {

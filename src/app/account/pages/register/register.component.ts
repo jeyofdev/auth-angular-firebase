@@ -10,6 +10,7 @@ import { Observable, map } from 'rxjs';
 import { inputEqualValidator } from '../../validators/input-equal.validator';
 import { FirebaseError } from '@angular/fire/app';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-register',
@@ -38,6 +39,7 @@ export class RegisterComponent implements OnInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
+		private router: Router,
 	) {}
 
 	ngOnInit(): void {
@@ -63,6 +65,7 @@ export class RegisterComponent implements OnInit {
 			.then(() => {
 				this.formErrorMessage = null;
 				this.mainForm.reset();
+				this.router.navigateByUrl('/account/home');
 			})
 			.catch((error: unknown) => {
 				if (error instanceof FirebaseError) {

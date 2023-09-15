@@ -3,6 +3,7 @@ import { ProviderEnum } from '../../enum/provider.enum';
 import { ISocialProvider } from 'src/app/core/model/social-provider.model';
 import { GoogleAuthProvider, GithubAuthProvider } from '@angular/fire/auth';
 import { AuthService } from '../../../account/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-layout',
@@ -18,7 +19,10 @@ export class LayoutComponent implements OnInit {
 
 	socialProviders!: ISocialProvider[];
 
-	constructor(private authService: AuthService) {}
+	constructor(
+		private authService: AuthService,
+		private router: Router,
+	) {}
 
 	ngOnInit(): void {
 		this.socialProviders = [
@@ -47,6 +51,8 @@ export class LayoutComponent implements OnInit {
 			currentProvider = new GithubAuthProvider();
 		}
 
-		this.authService.loginWithPopup(currentProvider);
+		this.authService.loginWithPopup(currentProvider).then(() => {
+			this.router.navigateByUrl('/account/home');
+		});
 	}
 }
