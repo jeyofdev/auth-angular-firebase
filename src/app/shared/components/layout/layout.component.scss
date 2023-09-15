@@ -16,30 +16,67 @@
 	background-color: $light;
 	border-radius: 1rem;
 	width: 100%;
-	max-width: 1000px;
+	max-width: 450px;
 	overflow: hidden;
 
-	.content-box {
-		grid-column: 1 / span 4;
-		padding: 1rem;
+	@media (min-width: $md) {
+		max-width: 1280px;
+	}
+}
 
-		.content-title {
-			margin-bottom: 0.9rem;
-			text-align: left;
-			font-family: $fontFamilySansSerif;
-		}
+:host ::ng-deep .content-box {
+	grid-column: 1 / span 12;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem 1.5rem;
 
-		.content-subtitle {
-			text-align: left;
-			font-family: $fontFamilySansSerif3;
-			font-weight: normal;
-			color: var(--primary-700);
-		}
+	@media (min-width: $sm) {
+		padding: 1.5rem 1.5rem;
 	}
 
-	.img-box {
-		grid-column: auto / span 8;
-		background-color: var(--primary-800);
+	@media (min-width: $md) {
+		grid-column: 1 / span 5;
+		padding: 1rem 3rem;
+	}
+}
+
+:host ::ng-deep .img-box {
+	position: relative;
+	grid-column: auto / span 7;
+	background-color: var(--primary-800);
+	display: none;
+	width: 100%;
+	height: calc(100% - (2 * 0rem));
+	margin: 0rem;
+	overflow: hidden;
+
+	@media (min-width: $md) {
+		display: block;
+	}
+
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+	}
+}
+
+:host ::ng-deep .content-top {
+	margin-bottom: 2.5rem;
+
+	.content-title {
+		margin-bottom: 0.9rem;
+		text-align: left;
+		font-family: $fontFamilySansSerif;
+	}
+
+	.content-subtitle {
+		text-align: left;
+		font-family: $fontFamilySansSerif3;
+		font-weight: normal;
+		color: var(--primary-700);
 	}
 }
 
@@ -51,4 +88,24 @@
 	gap: 1rem;
 	text-align: center;
 	width: 100%;
+}
+
+:host ::ng-deep .redirect {
+	display: flex;
+	justify-content: center;
+	margin-top: 2.5rem;
+
+	p {
+		font-family: $fontFamilySansSerif2;
+		font-size: 0.8rem;
+		color: var(--primary-700);
+		line-height: $lineHeightSM;
+		font-weight: 500;
+	}
+
+	a {
+		text-decoration: none;
+		color: var(--primary-500);
+		font-weight: bold;
+	}
 }
