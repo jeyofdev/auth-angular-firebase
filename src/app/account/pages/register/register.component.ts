@@ -1,4 +1,3 @@
-import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {
 	FormBuilder,
@@ -9,6 +8,8 @@ import {
 import { registerValidationMessages } from '../../validations/messages.validation';
 import { Observable, map } from 'rxjs';
 import { inputEqualValidator } from '../../validators/input-equal.validator';
+import { FirebaseError } from '@angular/fire/app';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
 	selector: 'app-register',
@@ -32,6 +33,7 @@ export class RegisterComponent implements OnInit {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	inputsValidationMessages!: any;
 	showPasswordEqualError$!: Observable<boolean>;
+	formErrorMessage!: string | null;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -59,11 +61,13 @@ export class RegisterComponent implements OnInit {
 				this.mainForm.value.password.password,
 			)
 			.then(() => {
+				this.formErrorMessage = null;
 				this.mainForm.reset();
 			})
 			.catch((error: unknown) => {
-				// eslint-disable-next-line no-console
-				console.log(error);
+				if (error instanceof FirebaseError) {
+					this.formErrorMessage = this.authService.setErrorMessage(error.code);
+				}
 			});
 	}
 

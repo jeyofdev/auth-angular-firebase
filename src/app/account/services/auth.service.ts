@@ -15,6 +15,7 @@ import {
 })
 export class AuthService {
 	userData: any;
+	errorMessage!: string | null;
 
 	constructor(private auth: Auth) {
 		onAuthStateChanged(this.auth, (user: any) => {
@@ -41,5 +42,19 @@ export class AuthService {
 
 	login(email: string, password: string): Promise<UserCredential> {
 		return signInWithEmailAndPassword(this.auth, email, password);
+	}
+
+	setErrorMessage(errorCode: string) {
+		if (
+			errorCode === 'auth/wrong-password' ||
+			errorCode === 'auth/user-not-found'
+		) {
+			this.errorMessage =
+				'Your credentials are incorrect. Please double-check your login details and try again.';
+		} else if (errorCode === 'auth/email-already-in-use') {
+			this.errorMessage = 'Email is invalid or already taken';
+		}
+
+		return this.errorMessage;
 	}
 }

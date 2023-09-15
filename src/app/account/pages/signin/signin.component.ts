@@ -6,6 +6,7 @@ import {
 	Validators,
 } from '@angular/forms';
 import { signinValidationMessages } from '../../validations/messages.validation';
+import { FirebaseError } from '@angular/fire/app';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -22,6 +23,7 @@ export class SigninComponent implements OnInit {
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	inputsValidationMessages!: any;
+	formErrorMessage!: string | null;
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -44,11 +46,13 @@ export class SigninComponent implements OnInit {
 		this.authService
 			.login(this.mainForm.value.email, this.mainForm.value.password)
 			.then(() => {
+				this.formErrorMessage = null;
 				this.mainForm.reset();
 			})
 			.catch((error: unknown) => {
-				// eslint-disable-next-line no-console
-				console.log(error);
+				if (error instanceof FirebaseError) {
+					this.formErrorMessage = this.authService.setErrorMessage(error.code);
+				}
 			});
 	}
 
