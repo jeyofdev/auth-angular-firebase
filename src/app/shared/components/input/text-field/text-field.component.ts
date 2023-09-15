@@ -5,6 +5,7 @@ import {
 	NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 import { getFormControl } from '../../../utils/form.utils';
+import { IValidationMessage } from '../../../interfaces/validation.interface';
 
 @Component({
 	selector: 'app-text-field',
@@ -21,6 +22,7 @@ import { getFormControl } from '../../../utils/form.utils';
 export class TextFieldComponent implements OnInit, ControlValueAccessor {
 	@Input() name!: string;
 	@Input() label!: string;
+	@Input() validationMessage!: IValidationMessage;
 
 	@Input() parentForm!: FormGroup;
 	@Input() groupName!: string;

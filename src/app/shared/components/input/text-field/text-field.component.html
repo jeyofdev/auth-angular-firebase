@@ -11,6 +11,14 @@
 			[disabled]="disabled"
 			(input)="onInputChange($event)"
 			(focus)="markAsTouched()"
+			[class]="
+				control?.invalid && control?.touched ? 'ng-invalid ng-dirty' : ''
+			"
 		/>
 	</span>
+
+	<app-error-field
+		[control]="control"
+		[validationMessages]="validationMessage"
+	></app-error-field>
 </div>

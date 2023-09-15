@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, forwardRef } from '@angular/core';
 import { FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { getFormControl } from '../../../utils/form.utils';
+import { IValidationMessage } from '../../../interfaces/validation.interface';
 
 @Component({
 	selector: 'app-password-field',
@@ -19,6 +20,7 @@ export class PasswordFieldComponent implements OnInit {
 	@Input() label!: string;
 	@Input() toggleMask!: boolean;
 	@Input() feedback!: boolean;
+	@Input() validationMessage!: IValidationMessage;
 
 	@Input() parentForm!: FormGroup;
 	@Input() groupName!: string;
