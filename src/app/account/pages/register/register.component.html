@@ -12,6 +12,13 @@
 			[formGroup]="mainForm"
 			(ngSubmit)="onMainFormSubmit()"
 		>
+			<app-alert
+				*ngIf="showPasswordEqualError$ | async"
+				severity="error"
+				[message]="inputsValidationMessages.passwordEqual?.message"
+			>
+			</app-alert>
+
 			<ng-container [formGroup]="personnalInfosForm">
 				<div class="form-row">
 					<app-text-field

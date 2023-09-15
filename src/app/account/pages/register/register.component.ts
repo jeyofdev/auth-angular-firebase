@@ -6,6 +6,8 @@ import {
 	Validators,
 } from '@angular/forms';
 import { registerValidationMessages } from '../../validations/messages.validation';
+import { Observable, map } from 'rxjs';
+import { inputEqualValidator } from '../../validators/input-equal.validator';
 
 @Component({
 	selector: 'app-register',
@@ -23,11 +25,12 @@ export class RegisterComponent implements OnInit {
 	lastnameCtrl!: FormControl<string | null>;
 	usernameCtrl!: FormControl<string | null>;
 	emailCtrl!: FormControl<string | null>;
-	passwordCtrl!: FormControl<string | null>;
-	confirmPasswordCtrl!: FormControl<string | null>;
+	passwordCtrl!: FormControl;
+	confirmPasswordCtrl!: FormControl;
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	inputsValidationMessages!: any;
+	showPasswordEqualError$!: Observable<boolean>;
 
 	constructor(private formBuilder: FormBuilder) {}
 
@@ -38,6 +41,7 @@ export class RegisterComponent implements OnInit {
 		this.initFormControls();
 		this.initFormGroups();
 		this.initMainForm();
+		this.initObservables();
 	}
 
 	onMainFormSubmit(): void {
@@ -61,10 +65,16 @@ export class RegisterComponent implements OnInit {
 			email: this.emailCtrl,
 		});
 
-		this.passwordForm = this.formBuilder.group({
-			password: this.passwordCtrl,
-			confirmPassword: this.confirmPasswordCtrl,
-		});
+		this.passwordForm = this.formBuilder.group(
+			{
+				password: this.passwordCtrl,
+				confirmPassword: this.confirmPasswordCtrl,
+			},
+			{
+				updateOn: 'change',
+				validators: [inputEqualValidator('password', 'confirmPassword')],
+			},
+		);
 	}
 
 	private initFormControls(): void {
@@ -122,5 +132,17 @@ export class RegisterComponent implements OnInit {
 				this.inputsValidationMessages.confirmPassword.maxlength.value,
 			),
 		]);
+	}
+
+	private initObservables(): void {
+		this.showPasswordEqualError$ = this.passwordForm.statusChanges.pipe(
+			map(
+				status =>
+					status === 'INVALID' &&
+					this.passwordCtrl.value &&
+					this.confirmPasswordCtrl.value &&
+					this.passwordForm.hasError('confirmEqual'),
+			),
+		);
 	}
 }
