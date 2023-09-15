@@ -11,6 +11,9 @@
 			[disabled]="disabled"
 			(input)="onInputChange($event)"
 			(focus)="markAsTouched()"
+			[class]="
+				control?.invalid && control?.touched ? 'ng-invalid ng-dirty' : ''
+			"
 		/>
 	</span>
 </div>

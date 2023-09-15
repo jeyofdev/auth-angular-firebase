@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import {
+	FormBuilder,
+	FormControl,
+	FormGroup,
+	Validators,
+} from '@angular/forms';
+import { registerValidationMessages } from '../../validations/messages.validation';
 
 @Component({
 	selector: 'app-register',
@@ -20,10 +26,14 @@ export class RegisterComponent implements OnInit {
 	passwordCtrl!: FormControl<string | null>;
 	confirmPasswordCtrl!: FormControl<string | null>;
 
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	inputsValidationMessages!: any;
+
 	constructor(private formBuilder: FormBuilder) {}
 
 	ngOnInit(): void {
 		this.hidePassword = false;
+		this.inputsValidationMessages = registerValidationMessages;
 
 		this.initFormControls();
 		this.initFormGroups();
@@ -58,10 +68,41 @@ export class RegisterComponent implements OnInit {
 	}
 
 	private initFormControls(): void {
-		this.firstnameCtrl = this.formBuilder.control('');
-		this.lastnameCtrl = this.formBuilder.control('');
-		this.usernameCtrl = this.formBuilder.control('');
-		this.emailCtrl = this.formBuilder.control('');
+		this.firstnameCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				registerValidationMessages.firstname.minlength.value,
+			),
+			Validators.maxLength(
+				registerValidationMessages.firstname.maxlength.value,
+			),
+		]);
+
+		this.lastnameCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				this.inputsValidationMessages.lastname.minlength.value,
+			),
+			Validators.maxLength(
+				this.inputsValidationMessages.lastname.maxlength.value,
+			),
+		]);
+
+		this.usernameCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.minLength(
+				this.inputsValidationMessages.username.minlength.value,
+			),
+			Validators.maxLength(
+				this.inputsValidationMessages.username.maxlength.value,
+			),
+		]);
+
+		this.emailCtrl = this.formBuilder.control('', [
+			Validators.required,
+			Validators.pattern(this.inputsValidationMessages.email.pattern.regex),
+		]);
+
 		this.passwordCtrl = this.formBuilder.control('');
 		this.confirmPasswordCtrl = this.formBuilder.control('');
 	}

@@ -21,6 +21,7 @@
 						formControlName="firstname"
 						groupName="personnalInfosForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.firstname"
 					></app-text-field>
 
 					<app-text-field
@@ -30,6 +31,7 @@
 						formControlName="lastname"
 						groupName="personnalInfosForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.lastname"
 					></app-text-field>
 				</div>
 
@@ -41,6 +43,7 @@
 						formControlName="username"
 						groupName="personnalInfosForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.username"
 					></app-text-field>
 				</div>
 
@@ -52,6 +55,7 @@
 						formControlName="email"
 						groupName="personnalInfosForm"
 						[parentForm]="mainForm"
+						[validationMessage]="inputsValidationMessages.email"
 					></app-text-field>
 				</div>
 			</ng-container>
@@ -81,11 +85,7 @@
 				</div>
 			</ng-container>
 
-			<app-button-rounded
-				type="submit"
-				severity="primary"
-				[outline]="false"
-				[disabled]="!mainForm.valid"
+			<app-button-rounded type="submit" severity="primary" [outline]="false"
 				>Register</app-button-rounded
 			>
 		</form>
