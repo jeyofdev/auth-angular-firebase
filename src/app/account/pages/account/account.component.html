@@ -1,3 +1,5 @@
 <div class="account-container">
-	<h1>Welcome {{ user.displayName }}</h1>
+	<h1>Welcome {{ user.profile.username }}</h1>
 </div>
+
+<pre>{{ user | json }}</pre>

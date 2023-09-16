@@ -40,4 +40,14 @@ export const userInformationsReducer = createReducer(
 			};
 		},
 	),
+	on(
+		UserActions.informations.loadUserSuccess,
+		(state, actions): IUserInformationsState => {
+			return {
+				...state,
+				account: actions.payload.data.account,
+				profile: actions.payload.data.profile,
+			};
+		},
+	),
 );

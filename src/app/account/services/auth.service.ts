@@ -57,4 +57,10 @@ export class AuthService {
 
 		return this.errorMessage;
 	}
+
+	getAuthLocal() {
+		const token = localStorage.getItem('user');
+		const user = JSON.parse(token as string);
+		return user;
+	}
 }

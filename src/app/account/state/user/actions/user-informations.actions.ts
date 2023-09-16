@@ -13,5 +13,9 @@ export const UserInformationsActions = createActionGroup({
 		'Add user Failure': props<{
 			payload: { error: unknown };
 		}>(),
+
+		'Load user': props<{ payload: { userId: string } }>(),
+		'Load user Success': props<{ payload: { data: IUser } }>(),
+		'Load user Failure': props<{ payload: { error: unknown } }>(),
 	},
 });
