@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './components/layout/layout.component';
 import { PrimengModule } from './primeng.module';
 import { DividerComponent } from './components/divider/divider.component';
 import { ButtonSocialComponent } from './components/button/button-social/button-social.component';
@@ -12,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { ErrorFieldComponent } from './components/error/error-field/error-field.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
 	declarations: [

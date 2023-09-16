@@ -16,9 +16,11 @@ import { IUser } from '../../../account/interfaces/user.interface';
 export class LayoutComponent implements OnInit {
 	@Input({ required: true }) pageTitle!: string;
 	@Input() subtitle!: string;
-	@Input({ required: true }) redirectLabel!: string;
+	@Input() redirectLabel!: string;
 	@Input({ required: true }) redirectRouterLink!: string;
 	@Input({ required: true }) redirectLabelLink!: string;
+	@Input() showSocialButtons!: boolean;
+	@Input() showBack!: boolean;
 
 	socialProviders!: ISocialProvider[];
 

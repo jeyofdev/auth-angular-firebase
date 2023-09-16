@@ -1,6 +1,7 @@
 <app-layout
 	pageTitle="Signin"
 	subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+	[showSocialButtons]="true"
 	redirectLabel="Don't have an Account ?"
 	redirectRouterLink="/account/register"
 	redirectLabelLink="Register"
@@ -35,6 +36,12 @@
 					[parentForm]="mainForm"
 					[validationMessage]="inputsValidationMessages.password"
 				></app-password-field>
+			</div>
+
+			<div class="form-links">
+				<a class="forgot-link" routerLink="/account/forgot-password"
+					>Forgot password ?</a
+				>
 			</div>
 
 			<app-button-rounded

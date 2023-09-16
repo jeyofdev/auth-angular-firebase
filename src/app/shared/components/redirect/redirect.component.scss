@@ -18,3 +18,14 @@
 		font-weight: bold;
 	}
 }
+
+:host ::ng-deep .link-with-icon {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+
+	.icon {
+		font-size: 0.9rem;
+		color: var(--primary-700);
+	}
+}

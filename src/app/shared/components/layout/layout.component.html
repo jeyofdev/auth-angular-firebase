@@ -14,30 +14,33 @@
 
 				<ng-content select="[templateForm]"></ng-content>
 
-				<app-divider
-					maxWidth="100%"
-					layout="horizontal"
-					label="Social Signup"
-					backgroundColor="#fff"
-					margin="2rem 0rem"
-				></app-divider>
+				<ng-container *ngIf="showSocialButtons">
+					<app-divider
+						maxWidth="100%"
+						layout="horizontal"
+						label="Social Signup"
+						backgroundColor="#fff"
+						margin="2rem 0rem"
+					></app-divider>
 
-				<div class="social-connect-box">
-					<app-button-social
-						*ngFor="let provider of socialProviders"
-						type="button"
-						[outline]="provider.outline"
-						[icon]="provider.icon"
-						(click)="loginWithProvider(provider.name)"
-						>{{ provider.label }}</app-button-social
-					>
-				</div>
+					<div class="social-connect-box">
+						<app-button-social
+							*ngFor="let provider of socialProviders"
+							type="button"
+							[outline]="provider.outline"
+							[icon]="provider.icon"
+							(click)="loginWithProvider(provider.name)"
+							>{{ provider.label }}</app-button-social
+						>
+					</div>
+				</ng-container>
 
 				<div class="redirect-box">
 					<app-redirect
-						[label]="redirectLabel"
+						[label]="!showBack ? redirectLabel : ''"
 						[routerLink]="redirectRouterLink"
 						[labelLink]="redirectLabelLink"
+						[linkOnly]="showBack"
 					></app-redirect>
 				</div>
 			</div>

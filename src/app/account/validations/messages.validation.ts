@@ -90,3 +90,13 @@ export const signinValidationMessages = {
 		},
 	},
 };
+
+export const forgotPasswordValidationMessages = {
+	email: {
+		required: { message: 'This field is required' },
+		pattern: {
+			regex: regexEmail,
+			message: 'Your email is not in a valid format',
+		},
+	},
+};

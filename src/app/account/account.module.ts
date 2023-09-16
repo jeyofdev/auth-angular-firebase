@@ -10,9 +10,15 @@ import { UserInformationsEffects } from './state/user/effects/user-informations.
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromUser from './state/user/reducers/user.reducer';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
-	declarations: [SigninComponent, RegisterComponent, AccountComponent],
+	declarations: [
+		SigninComponent,
+		RegisterComponent,
+		AccountComponent,
+		ForgotPasswordComponent,
+	],
 	imports: [
 		CommonModule,
 		AccountRoutingModule,
