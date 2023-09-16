@@ -8,6 +8,7 @@ import {
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
 	signInWithPopup,
+	signOut,
 	UserCredential,
 } from '@angular/fire/auth';
 @Injectable({
@@ -44,6 +45,10 @@ export class AuthService {
 		return signInWithEmailAndPassword(this.auth, email, password);
 	}
 
+	logout(): Promise<void> {
+		return signOut(this.auth);
+	}
+
 	setErrorMessage(errorCode: string) {
 		if (
 			errorCode === 'auth/wrong-password' ||
@@ -56,5 +61,11 @@ export class AuthService {
 		}
 
 		return this.errorMessage;
+	}
+
+	getAuthLocal() {
+		const token = localStorage.getItem('user');
+		const user = JSON.parse(token as string);
+		return user;
 	}
 }

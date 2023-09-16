@@ -1,3 +1,9 @@
 <div class="account-container">
-	<h1>Welcome {{ user.displayName }}</h1>
+	<h1 class="title">Welcome {{ user.profile.username }}</h1>
+
+	<p-button
+		label="Logout"
+		icon="fa-solid fa-right-from-bracket"
+		(click)="logout()"
+	></p-button>
 </div>

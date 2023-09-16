@@ -58,6 +58,10 @@
 				"@typescript-eslint/lines-between-class-members": "off",
 				"import/no-extraneous-dependencies": "off"
 			}
+		},
+		{
+			"files": ["*.ts"],
+			"extends": ["plugin:@ngrx/recommended-requiring-type-checking"]
 		}
 	]
 }
