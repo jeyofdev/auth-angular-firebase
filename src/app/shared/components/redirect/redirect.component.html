@@ -1,5 +1,14 @@
 <div class="redirect">
-	<p>
-		{{ label }} <a [routerLink]="routerLink">{{ labelLink }}</a>
-	</p>
+	<ng-container *ngIf="!linkOnly">
+		<p>
+			{{ label }} <a [routerLink]="routerLink">{{ labelLink }}</a>
+		</p>
+	</ng-container>
+
+	<ng-container *ngIf="linkOnly">
+		<a [routerLink]="routerLink" class="link-with-icon">
+			<i class="icon fa-solid fa-arrow-left"></i>
+			<span>{{ labelLink }}</span></a
+		>
+	</ng-container>
 </div>

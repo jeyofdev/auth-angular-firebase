@@ -9,4 +9,5 @@ export class RedirectComponent {
 	@Input({ required: true }) label!: string;
 	@Input({ required: true }) routerLink!: string;
 	@Input({ required: true }) labelLink!: string;
+	@Input() linkOnly!: boolean;
 }
