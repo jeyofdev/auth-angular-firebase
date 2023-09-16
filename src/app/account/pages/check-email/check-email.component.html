@@ -1,0 +1,18 @@
+<app-layout
+	pageTitle="Check your email"
+	subtitle="Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+	redirectRouterLink="/account/signin"
+	redirectLabelLink="back to signin"
+	[showBack]="true"
+>
+	<div templateForm>
+		<div class="redirect-box">
+			<app-redirect
+				label="Don't receive the email ?"
+				[isButton]="true"
+				[buttonClick]="resendEmail()"
+				buttonLabel="Click to resend"
+			></app-redirect>
+		</div>
+	</div>
+</app-layout>
