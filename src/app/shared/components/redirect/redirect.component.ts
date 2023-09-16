@@ -7,7 +7,10 @@ import { Component, Input } from '@angular/core';
 })
 export class RedirectComponent {
 	@Input({ required: true }) label!: string;
-	@Input({ required: true }) routerLink!: string;
-	@Input({ required: true }) labelLink!: string;
+	@Input() routerLink!: string;
+	@Input() labelLink!: string;
 	@Input() linkOnly!: boolean;
+	@Input() isButton!: boolean;
+	@Input() buttonLabel!: string;
+	@Input() buttonClick!: void;
 }

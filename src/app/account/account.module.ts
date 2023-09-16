@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromUser from './state/user/reducers/user.reducer';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { CheckEmailComponent } from './pages/check-email/check-email.component';
 
 @NgModule({
 	declarations: [
@@ -18,6 +19,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 		RegisterComponent,
 		AccountComponent,
 		ForgotPasswordComponent,
+		CheckEmailComponent,
 	],
 	imports: [
 		CommonModule,

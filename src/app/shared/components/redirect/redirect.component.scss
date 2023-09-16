@@ -4,7 +4,8 @@
 	display: flex;
 	justify-content: center;
 
-	p {
+	p,
+	.p-button {
 		font-family: $fontFamilySansSerif2;
 		font-size: 0.8rem;
 		color: var(--primary-700);
@@ -16,6 +17,10 @@
 		text-decoration: none;
 		color: var(--primary-500);
 		font-weight: bold;
+	}
+
+	.p-button {
+		padding: 0;
 	}
 }
 

@@ -1,7 +1,12 @@
 <div class="redirect">
 	<ng-container *ngIf="!linkOnly">
-		<p>
+		<p *ngIf="!isButton">
 			{{ label }} <a [routerLink]="routerLink">{{ labelLink }}</a>
+		</p>
+
+		<p *ngIf="isButton">
+			{{ label }}
+			<p-button [label]="buttonLabel" styleClass="p-button-link"></p-button>
 		</p>
 	</ng-container>
 
