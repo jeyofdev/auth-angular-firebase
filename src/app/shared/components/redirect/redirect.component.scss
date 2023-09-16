@@ -8,7 +8,6 @@
 	.p-button {
 		font-family: $fontFamilySansSerif2;
 		font-size: 0.8rem;
-		color: var(--primary-700);
 		line-height: $lineHeightSM;
 		font-weight: 500;
 	}
@@ -21,6 +20,7 @@
 
 	.p-button {
 		padding: 0;
+		color: var(--primary-500);
 	}
 }
 
