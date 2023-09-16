@@ -8,6 +8,7 @@ import {
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
 	signInWithPopup,
+	signOut,
 	UserCredential,
 } from '@angular/fire/auth';
 @Injectable({
@@ -42,6 +43,10 @@ export class AuthService {
 
 	login(email: string, password: string): Promise<UserCredential> {
 		return signInWithEmailAndPassword(this.auth, email, password);
+	}
+
+	logout(): Promise<void> {
+		return signOut(this.auth);
 	}
 
 	setErrorMessage(errorCode: string) {

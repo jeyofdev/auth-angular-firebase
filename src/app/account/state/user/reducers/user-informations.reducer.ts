@@ -50,4 +50,7 @@ export const userInformationsReducer = createReducer(
 			};
 		},
 	),
+	on(UserActions.informations.logoutUserSuccess, (): IUserInformationsState => {
+		return initialUserInformationsState;
+	}),
 );

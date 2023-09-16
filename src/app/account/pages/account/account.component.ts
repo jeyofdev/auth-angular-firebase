@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { UserActions } from '../../state/user/actions/user-index.actions';
 import { selectUserInformations } from '../../state/user/selectors/user-informations.selectors';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-account',
@@ -17,6 +18,7 @@ export class AccountComponent implements OnInit {
 	constructor(
 		private authService: AuthService,
 		private store: Store,
+		private router: Router,
 	) {}
 
 	ngOnInit(): void {
@@ -36,5 +38,10 @@ export class AccountComponent implements OnInit {
 				}),
 			)
 			.subscribe();
+	}
+
+	logout() {
+		this.store.dispatch(UserActions.informations.logoutUser());
+		this.router.navigateByUrl('/account/signin');
 	}
 }

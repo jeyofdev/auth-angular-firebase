@@ -1,5 +1,11 @@
 :host ::ng-deep .account-container {
 	margin-top: 2rem;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+}
+
+:host ::ng-deep .title {
+	margin-bottom: 2rem;
 }

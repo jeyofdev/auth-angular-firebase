@@ -1,4 +1,4 @@
-import { createActionGroup, props } from '@ngrx/store';
+import { createActionGroup, emptyProps, props } from '@ngrx/store';
 import { IUser } from '../../../interfaces/user.interface';
 
 export const UserInformationsActions = createActionGroup({
@@ -17,5 +17,9 @@ export const UserInformationsActions = createActionGroup({
 		'Load user': props<{ payload: { userId: string } }>(),
 		'Load user Success': props<{ payload: { data: IUser } }>(),
 		'Load user Failure': props<{ payload: { error: unknown } }>(),
+
+		'Logout user': emptyProps,
+		'Logout user Success': emptyProps,
+		'Logout user Failure': props<{ payload: { error: unknown } }>(),
 	},
 });

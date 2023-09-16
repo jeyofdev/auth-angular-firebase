@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { UserService } from '../../../services/user.service';
 import { mergeMap } from 'rxjs';
 import { UserActions } from '../actions/user-index.actions';
+import { AuthService } from '../../../services/auth.service';
 
 @Injectable()
 export class UserInformationsEffects {
@@ -46,8 +47,25 @@ export class UserInformationsEffects {
 		);
 	});
 
+	logoutUser$ = createEffect(() => {
+		return this.actions$.pipe(
+			ofType(UserActions.informations.logoutUser),
+			mergeMap(async () =>
+				this.authService
+					.logout()
+					.then(() => UserActions.informations.logoutUserSuccess())
+					.catch(error =>
+						UserActions.informations.logoutUserFailure({
+							payload: { error: error.body.error },
+						}),
+					),
+			),
+		);
+	});
+
 	constructor(
 		private actions$: Actions,
 		private userInformationsService: UserService,
+		private authService: AuthService,
 	) {}
 }
