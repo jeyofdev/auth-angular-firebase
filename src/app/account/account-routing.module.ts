@@ -7,11 +7,13 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { CheckEmailComponent } from './pages/check-email/check-email.component';
 import { UpdatePasswordComponent } from './pages/update-password/update-password.component';
 import { PasswordUpdateConfirmComponent } from './pages/password-update-confirm/password-update-confirm.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: AccountComponent,
+		canActivate: [AuthGuard],
 	},
 	{
 		path: 'home',
