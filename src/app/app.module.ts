@@ -11,9 +11,10 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-	declarations: [AppComponent],
+	declarations: [AppComponent, NotFoundComponent],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
