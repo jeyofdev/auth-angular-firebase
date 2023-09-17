@@ -41,6 +41,9 @@ export class UpdatePasswordComponent implements OnInit {
 	}
 
 	private updatePassword() {
+		// eslint-disable-next-line no-console
+		console.log(this.mainForm.value);
+
 		// todo updade user passord
 	}
 
@@ -48,7 +51,7 @@ export class UpdatePasswordComponent implements OnInit {
 		this.mainForm = this.formBuilder.group(
 			{
 				password: this.passwordCtrl,
-				confirmPassword: this.passwordCtrl,
+				confirmPassword: this.confirmPasswordCtrl,
 			},
 			{
 				updateOn: 'change',
