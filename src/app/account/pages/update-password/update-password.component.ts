@@ -8,6 +8,8 @@ import {
 import { updatePasswordValidationMessages } from '../../validations/messages.validation';
 import { Observable, map } from 'rxjs';
 import { inputEqualValidator } from '../../validators/input-equal.validator';
+import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-update-password',
@@ -15,6 +17,7 @@ import { inputEqualValidator } from '../../validators/input-equal.validator';
 	styleUrls: ['./update-password.component.scss'],
 })
 export class UpdatePasswordComponent implements OnInit {
+	oobCode!: string | null;
 	hidePassword!: boolean;
 
 	mainForm!: FormGroup;
@@ -25,9 +28,15 @@ export class UpdatePasswordComponent implements OnInit {
 	inputsValidationMessages!: any;
 	showPasswordEqualError$!: Observable<boolean>;
 
-	constructor(private formBuilder: FormBuilder) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
+		private activatedRoute: ActivatedRoute,
+		private router: Router,
+	) {}
 
 	ngOnInit(): void {
+		this.oobCode = this.activatedRoute.snapshot.queryParamMap.get('oobCode');
 		this.hidePassword = false;
 		this.inputsValidationMessages = updatePasswordValidationMessages;
 
@@ -41,10 +50,14 @@ export class UpdatePasswordComponent implements OnInit {
 	}
 
 	private updatePassword() {
-		// eslint-disable-next-line no-console
-		console.log(this.mainForm.value);
+		if (this.oobCode) {
+			this.authService.confirmPasswordReset(
+				this.oobCode,
+				this.mainForm.value.password,
+			);
 
-		// todo updade user passord
+			this.router.navigateByUrl('/account/password-updated-confirm');
+		}
 	}
 
 	private initMainForm(): void {

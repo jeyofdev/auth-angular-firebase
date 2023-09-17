@@ -11,6 +11,7 @@ import {
 	signOut,
 	UserCredential,
 	sendPasswordResetEmail,
+	confirmPasswordReset,
 } from '@angular/fire/auth';
 @Injectable({
 	providedIn: 'root',
@@ -50,8 +51,12 @@ export class AuthService {
 		return signOut(this.auth);
 	}
 
-	resetPassword(email: string) {
+	resetPassword(email: string): Promise<void> {
 		return sendPasswordResetEmail(this.auth, email);
+	}
+
+	confirmPasswordReset(oobCode: string, newPassword: string): Promise<void> {
+		return confirmPasswordReset(this.auth, oobCode, newPassword);
 	}
 
 	setErrorMessage(errorCode: string) {
