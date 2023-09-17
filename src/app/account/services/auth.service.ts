@@ -10,6 +10,7 @@ import {
 	signInWithPopup,
 	signOut,
 	UserCredential,
+	sendPasswordResetEmail,
 } from '@angular/fire/auth';
 @Injectable({
 	providedIn: 'root',
@@ -47,6 +48,10 @@ export class AuthService {
 
 	logout(): Promise<void> {
 		return signOut(this.auth);
+	}
+
+	resetPassword(email: string) {
+		return sendPasswordResetEmail(this.auth, email);
 	}
 
 	setErrorMessage(errorCode: string) {
