@@ -35,14 +35,16 @@
 					</div>
 				</ng-container>
 
-				<div class="redirect-box">
-					<app-redirect
-						[label]="!showBack ? redirectLabel : ''"
-						[routerLink]="redirectRouterLink"
-						[labelLink]="redirectLabelLink"
-						[linkOnly]="showBack"
-					></app-redirect>
-				</div>
+				<ng-container *ngIf="!hideRedirect">
+					<div class="redirect-box">
+						<app-redirect
+							[label]="!showBack ? redirectLabel : ''"
+							[routerLink]="redirectRouterLink"
+							[labelLink]="redirectLabelLink"
+							[linkOnly]="showBack"
+						></app-redirect>
+					</div>
+				</ng-container>
 			</div>
 		</div>
 

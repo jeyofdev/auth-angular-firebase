@@ -21,6 +21,7 @@ export class LayoutComponent implements OnInit {
 	@Input({ required: true }) redirectLabelLink!: string;
 	@Input() showSocialButtons!: boolean;
 	@Input() showBack!: boolean;
+	@Input() hideRedirect!: boolean;
 
 	socialProviders!: ISocialProvider[];
 
