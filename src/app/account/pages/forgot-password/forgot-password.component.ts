@@ -6,6 +6,8 @@ import {
 	Validators,
 } from '@angular/forms';
 import { forgotPasswordValidationMessages } from '../../validations/messages.validation';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-forgot-password',
@@ -21,7 +23,11 @@ export class ForgotPasswordComponent implements OnInit {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	inputsValidationMessages!: any;
 
-	constructor(private formBuilder: FormBuilder) {}
+	constructor(
+		private formBuilder: FormBuilder,
+		private authService: AuthService,
+		private router: Router,
+	) {}
 
 	ngOnInit(): void {
 		this.inputsValidationMessages = forgotPasswordValidationMessages;
@@ -31,8 +37,20 @@ export class ForgotPasswordComponent implements OnInit {
 	}
 
 	onMainFormSubmit(): void {
-		// eslint-disable-next-line no-console
-		console.log(this.mainForm.value);
+		this.resetPassword();
+	}
+
+	private resetPassword() {
+		this.authService.resetPassword(this.mainForm.value.email).then(() => {
+			const routeState = {
+				email: this.mainForm.value.email,
+			};
+
+			this.mainForm.reset();
+			this.router.navigateByUrl('/account/check-email', {
+				state: routeState,
+			});
+		});
 	}
 
 	private initMainForm() {

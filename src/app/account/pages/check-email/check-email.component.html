@@ -10,7 +10,7 @@
 			<app-redirect
 				label="Don't receive the email ?"
 				[isButton]="true"
-				[buttonClick]="resendEmail()"
+				(click)="resendEmail()"
 				buttonLabel="Click to resend"
 			></app-redirect>
 		</div>
