@@ -13,6 +13,7 @@ import * as fromUser from './state/user/reducers/user.reducer';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { CheckEmailComponent } from './pages/check-email/check-email.component';
 import { UpdatePasswordComponent } from './pages/update-password/update-password.component';
+import { PasswordUpdateConfirmComponent } from './pages/password-update-confirm/password-update-confirm.component';
 
 @NgModule({
 	declarations: [
@@ -22,6 +23,7 @@ import { UpdatePasswordComponent } from './pages/update-password/update-password
 		ForgotPasswordComponent,
 		CheckEmailComponent,
 		UpdatePasswordComponent,
+		PasswordUpdateConfirmComponent,
 	],
 	imports: [
 		CommonModule,
