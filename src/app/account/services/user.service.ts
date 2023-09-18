@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Firestore, doc, setDoc } from '@angular/fire/firestore';
-import { IUser } from '../interfaces/user.interface';
-import { getDoc } from 'firebase/firestore';
+import {
+	Firestore,
+	doc,
+	getDoc,
+	setDoc,
+	updateDoc,
+} from '@angular/fire/firestore';
+import { IUser, IUserAccount } from '../interfaces/user.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -23,4 +28,9 @@ export class UserService {
 	async addUser(userId: string, newUser: IUser): Promise<void> {
 		return setDoc(doc(this.firestore, 'users', userId), newUser);
 	}
+
+	updateById = (userId: string, account: IUserAccount): Promise<void> => {
+		const docInstance = doc(this.firestore, 'users', userId);
+		return updateDoc(docInstance, { account });
+	};
 }

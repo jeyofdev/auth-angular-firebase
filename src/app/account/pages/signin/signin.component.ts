@@ -9,6 +9,8 @@ import { signinValidationMessages } from '../../validations/messages.validation'
 import { FirebaseError } from '@angular/fire/app';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { UserActions } from '../../state/user/actions/user-index.actions';
 
 @Component({
 	selector: 'app-signin',
@@ -30,6 +32,7 @@ export class SigninComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		private authService: AuthService,
 		private router: Router,
+		private store: Store,
 	) {}
 
 	ngOnInit(): void {
@@ -47,7 +50,18 @@ export class SigninComponent implements OnInit {
 	private signinWithEmail() {
 		this.authService
 			.login(this.mainForm.value.email, this.mainForm.value.password)
-			.then(() => {
+			.then(currentUser => {
+				this.store.dispatch(
+					UserActions.informations.updateUser({
+						payload: {
+							userId: currentUser.user.uid,
+							account: {
+								createdAt: currentUser.user.metadata.creationTime ?? '',
+								lastLogin: currentUser.user.metadata.lastSignInTime ?? '',
+							},
+						},
+					}),
+				);
 				this.formErrorMessage = null;
 				this.mainForm.reset();
 				this.router.navigateByUrl('/account/home');

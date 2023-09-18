@@ -53,4 +53,14 @@ export const userInformationsReducer = createReducer(
 	on(UserActions.informations.logoutUserSuccess, (): IUserInformationsState => {
 		return initialUserInformationsState;
 	}),
+	on(
+		UserActions.informations.updateUser,
+		(state, actions): IUserInformationsState => {
+			return {
+				...state,
+				account: actions.payload.account,
+				profile: state.profile,
+			};
+		},
+	),
 );
