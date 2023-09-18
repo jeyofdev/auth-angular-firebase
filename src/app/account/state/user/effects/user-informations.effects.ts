@@ -63,6 +63,26 @@ export class UserInformationsEffects {
 		);
 	});
 
+	updateUser$ = createEffect(() => {
+		return this.actions$.pipe(
+			ofType(UserActions.informations.updateUser),
+			mergeMap(async ({ payload: { userId, account } }) =>
+				this.userInformationsService
+					.updateById(userId, account)
+					.then(() =>
+						UserActions.informations.updateUserSuccess({
+							payload: { userId, account },
+						}),
+					)
+					.catch(error =>
+						UserActions.informations.updateUserFailure({
+							payload: { error: error.body.error },
+						}),
+					),
+			),
+		);
+	});
+
 	constructor(
 		private actions$: Actions,
 		private userInformationsService: UserService,
