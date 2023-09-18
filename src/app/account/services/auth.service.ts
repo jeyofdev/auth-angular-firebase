@@ -62,7 +62,8 @@ export class AuthService {
 	setErrorMessage(errorCode: string) {
 		if (
 			errorCode === 'auth/wrong-password' ||
-			errorCode === 'auth/user-not-found'
+			errorCode === 'auth/user-not-found' ||
+			errorCode === 'auth/invalid-login-credentials'
 		) {
 			this.errorMessage =
 				'Your credentials are incorrect. Please double-check your login details and try again.';
