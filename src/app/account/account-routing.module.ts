@@ -7,42 +7,50 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { CheckEmailComponent } from './pages/check-email/check-email.component';
 import { UpdatePasswordComponent } from './pages/update-password/update-password.component';
 import { PasswordUpdateConfirmComponent } from './pages/password-update-confirm/password-update-confirm.component';
-import { AuthGuard } from './guards/auth.guard';
+import { IsAuthGuard } from './guards/isAuth.guard';
+import { NotAuthGuard } from './guards/notAuth.guard';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: AccountComponent,
-		canActivate: [AuthGuard],
+		canActivate: [IsAuthGuard],
 	},
 	{
 		path: 'home',
 		redirectTo: '',
 		pathMatch: 'full',
+		canActivate: [IsAuthGuard],
 	},
 	{
 		path: 'signin',
 		component: SigninComponent,
+		canActivate: [NotAuthGuard],
 	},
 	{
 		path: 'register',
 		component: RegisterComponent,
+		canActivate: [NotAuthGuard],
 	},
 	{
 		path: 'forgot-password',
 		component: ForgotPasswordComponent,
+		canActivate: [NotAuthGuard],
 	},
 	{
 		path: 'check-email',
 		component: CheckEmailComponent,
+		canActivate: [NotAuthGuard],
 	},
 	{
 		path: 'update-password',
 		component: UpdatePasswordComponent,
+		canActivate: [NotAuthGuard],
 	},
 	{
 		path: 'password-updated-confirm',
 		component: PasswordUpdateConfirmComponent,
+		canActivate: [NotAuthGuard],
 	},
 ];
 

@@ -42,6 +42,13 @@ export class AccountComponent implements OnInit {
 
 	logout() {
 		this.store.dispatch(UserActions.informations.logoutUser());
-		this.router.navigateByUrl('/account/signin');
+		this.store
+			.select(selectUserInformations)
+			.pipe(
+				map(() => {
+					this.router.navigateByUrl('/account/signin');
+				}),
+			)
+			.subscribe();
 	}
 }

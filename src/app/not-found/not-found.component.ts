@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../account/services/auth.service';
 
 @Component({
 	selector: 'app-not-found',
@@ -7,9 +8,15 @@ import { Router } from '@angular/router';
 	styleUrls: ['./not-found.component.scss'],
 })
 export class NotFoundComponent {
-	constructor(private router: Router) {}
+	connectedUser = this.authService.getAuthLocal();
+	constructor(
+		private router: Router,
+		private authService: AuthService,
+	) {}
 
-	redirectToSignIn(): void {
-		this.router.navigateByUrl('/account/signin');
+	redirect(): void {
+		this.router.navigateByUrl(
+			this.connectedUser ? '/account' : '/account/signin',
+		);
 	}
 }
