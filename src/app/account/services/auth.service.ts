@@ -69,6 +69,8 @@ export class AuthService {
 				'Your credentials are incorrect. Please double-check your login details and try again.';
 		} else if (errorCode === 'auth/email-already-in-use') {
 			this.errorMessage = 'Email is invalid or already taken';
+		} else if (errorCode === 'auth/account-exists-with-different-credential') {
+			this.errorMessage = 'Account already exist with different credentials';
 		}
 
 		return this.errorMessage;

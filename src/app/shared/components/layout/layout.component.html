@@ -12,6 +12,8 @@
 					</h5>
 				</div>
 
+				<app-alert [message]="formErrorMessage" severity="error"></app-alert>
+
 				<ng-content select="[templateForm]"></ng-content>
 
 				<ng-container *ngIf="showSocialButtons">

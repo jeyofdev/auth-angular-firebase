@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { UserActions } from '../../../account/state/user/actions/user-index.actions';
 import { IUser } from '../../../account/interfaces/user.interface';
+import { FirebaseError } from '@angular/fire/app';
 
 @Component({
 	selector: 'app-layout',
@@ -24,6 +25,7 @@ export class LayoutComponent implements OnInit {
 	@Input() hideRedirect!: boolean;
 
 	socialProviders!: ISocialProvider[];
+	formErrorMessage!: string | null;
 
 	constructor(
 		private authService: AuthService,
@@ -58,29 +60,37 @@ export class LayoutComponent implements OnInit {
 			currentProvider = new GithubAuthProvider();
 		}
 
-		this.authService.loginWithPopup(currentProvider).then(currentUser => {
-			const newUser: IUser = {
-				account: {
-					createdAt: currentUser.user.metadata.creationTime ?? '',
-					lastLogin: currentUser.user.metadata.lastSignInTime ?? '',
-				},
-				profile: {
-					firstname: '',
-					lastname: '',
-					username: currentUser.user.displayName ?? '',
-					email: currentUser.user.email ?? '',
-					phone: currentUser.user.phoneNumber ?? '',
-					avatar: currentUser.user.photoURL ?? '',
-				},
-			};
+		this.authService
+			.loginWithPopup(currentProvider)
+			.then(currentUser => {
+				const newUser: IUser = {
+					account: {
+						createdAt: currentUser.user.metadata.creationTime ?? '',
+						lastLogin: currentUser.user.metadata.lastSignInTime ?? '',
+					},
+					profile: {
+						firstname: '',
+						lastname: '',
+						username: currentUser.user.displayName ?? '',
+						email: currentUser.user.email ?? '',
+						phone: currentUser.user.phoneNumber ?? '',
+						avatar: currentUser.user.photoURL ?? '',
+					},
+				};
 
-			this.store.dispatch(
-				UserActions.informations.addUser({
-					payload: { userId: currentUser.user.uid, data: newUser },
-				}),
-			);
+				this.store.dispatch(
+					UserActions.informations.addUser({
+						payload: { userId: currentUser.user.uid, data: newUser },
+					}),
+				);
 
-			this.router.navigateByUrl('/account/home');
-		});
+				this.formErrorMessage = null;
+				this.router.navigateByUrl('/account/home');
+			})
+			.catch((error: unknown) => {
+				if (error instanceof FirebaseError) {
+					this.formErrorMessage = this.authService.setErrorMessage(error.code);
+				}
+			});
 	}
 }
